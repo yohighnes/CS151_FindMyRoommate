@@ -9,8 +9,7 @@ Imagine you get accepted to San Jose State University and you are not a local st
 
 ### Previous Works
 
-Nowadays, there are a lot of websites/apps that assist us to look for rooms or roommates such as Cragslist, LiveWith and Roomi...  However, while Cragslist is known for a lot of scamms, Roomi asks the users to pay a subscription plan if 
-they want to have access to some exclusive benefits. LiveWith is a free app, but it's only available for Apple users.
+Nowadays, there are a lot of websites/apps that assist us to look for rooms or roommates such as Cragslist, LiveWith and Roomi...  However, while Cragslist is known for a lot of scams, Roomi asks the users to pay a subscription plan if they want to have access to some exclusive benefits. LiveWith is a free app, but it's only available for Apple users.
 
 ### Intended Usage and Environment
 
