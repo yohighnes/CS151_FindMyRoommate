@@ -7,6 +7,14 @@ FindMyRoommate is a website designed to help individuals find compatible roommat
 
 Imagine you get accepted to San Jose State University and you are not a local student. You need to find a place to live so that you can commute easily to school; but you don’t have any friends or relatives in San Jose to ask. The cost of the apartments around school is also expensive too. You want to reduce the cost by looking for some schoolmates who can split the rent with you.
 
+### Previous Works
+
+Nowadays, there are a lot of websites/apps that assist us to look for rooms or roommates such as Cragslist, LiveWith and Roomi...  However, while Cragslist is known for a lot of scams, Roomi asks the users to pay a subscription plan if they want to have access to some exclusive benefits. LiveWith is a free app, but it's only available for Apple users.
+
+### Intended Usage and Environment
+
+FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a requirement, only students with active school emails are able to register and public their profiles. The website also provides full access to all students and is free of charge too.
+
 ### User Operations
 
 * The users are all SJSU students who looking for roommates to share a place with. 
