@@ -1,0 +1,12 @@
+• High-level description of your solution which may include (but is not limited to), your plan and approach.  Be as specific as possible. 
+The main problem that we will focus on is preventing scam. Because Find Roommate is built exclusively for SJSU students, therefore SJSU student ID and school gmail will be required to make an account. 
+Another way to tackle this problem is the report system. Report system will be used to report any suspicious activities, spams, and scam accounts. Accounts with multiple reports will get punished according to how many times it got reported. (warnings, temporary for a week, and permanent ban).
+Surveys and personal questionnaires are good to help users find the perfect match. These questions are optional and users can fill out as many as they want. These questions could be about hobbies, background, etc.
+The website/app will allow users to upload images, share their information, and stories about themselves.
+Rating system will be used to rate only user experience. There will be no rating system for roommates to avoid negative feedback and targets. These ratings could be a scale from 1 to 10 on the satisfaction of the users.
+Feedback system: only used to give feedback to the developers on how to improve the website.
+• Functionality: describe how your solution tackles the issues 
+SJSU student ID, gmail and reporting system will be the solution in tackling the scam. From our perspective, there will be people who will take care of the report system and manually track down scam and other suspicious activities.
+Survey questions and rating systems will help SJSU students to find a roommate that matches with their personality, schedule, activities.
+FindMyRoomate will also act similarly like a social media. There will be page for biography where users can introduce themselves to other students
+The feedback system is important to us. Users provide feedback on how to improve our website/apps. If users want us to add, remove, or improve a feature, they can send us through the feedback form.
