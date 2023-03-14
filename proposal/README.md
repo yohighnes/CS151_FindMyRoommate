@@ -3,6 +3,12 @@
 
 FindMyRoommate is a website designed to help individuals find compatible roommates for shared living situations. The website allows users to create a profile, search for potential roommates based on various criteria such as location, budget, lifestyle preferences, and interests, and communicate with potential matches.
 
+### Proposal Contributions
+
+* Yohannes created the repo and wrote a brief summary of what FindMyRoommate is.
+* Hoang worked on Solutions and Functionality.
+* Thao worked on Problem, Previous Works, Intended Usage and Environment, User Operations, and References.
+
 ### Problem
 
 Imagine you get accepted to San Jose State University and you are not a local student. You need to find a place to live so that you can commute easily to school; but you don’t have any friends or relatives in San Jose to ask. The cost of the apartments around school is also expensive too. You want to reduce the cost by looking for some schoolmates who can split the rent with you.
@@ -37,3 +43,8 @@ FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a 
 * Survey questions and rating systems will help SJSU students to find a roommate that matches their personality, schedule, and activities.
 * FindMyRoomate will also act similarly to social media. There will be a page for biography where users can introduce themselves to other students.
 * The feedback system is important to us. Users provide feedback on how to improve our website/apps. If users want us to add, remove, or improve a feature, they can send us the feedback form.
+
+### References
+
+[1] https://roomiapp.com/
+
