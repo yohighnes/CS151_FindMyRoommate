@@ -47,3 +47,4 @@ FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a 
 ### References
 
 [1] https://roomiapp.com/
+
