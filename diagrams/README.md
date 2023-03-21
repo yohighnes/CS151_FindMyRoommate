@@ -2,5 +2,6 @@
 
 | **UML DIAGRAM**| **Description**|
 | :------------- | :------------- |
-| [Use Case Diagram](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/ClassDiagram.png)  | Content Cell  |
-| [State Case Diagram](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/StateDiagram.png)  | Content Cell  |
+| [Class Diagram](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/ClassDiagram.png)  | Content Cell  |
+| [State Diagram](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/StateDiagram.png)  | Content Cell  |
+| [Use Case Diagram](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/StateDiagram.png)  | Content Cell  |
