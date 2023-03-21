@@ -1,4 +1,4 @@
-# CS151 FindMyRoomate
+# CS151-FindMyRoomate
 
 | **UML DIAGRAM**| **Description**|
 | :------------- | :------------- |
