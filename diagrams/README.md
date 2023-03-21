@@ -1,6 +1,6 @@
 # CS151 FindMyRoomate
 
-| First Header  | Second Header |
+| UML DIAGRAM   | Description   |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
