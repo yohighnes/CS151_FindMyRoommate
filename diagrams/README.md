@@ -1,3 +1,3 @@
 # CS151 FindMyRoomate
 
-| UML Diagram                   | Description
+| UML Diagram | Description |
