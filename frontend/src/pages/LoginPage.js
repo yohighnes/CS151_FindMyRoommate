@@ -3,10 +3,10 @@ import LoginForm from "../components/loginForm/LoginForm";
 
 function LoginPage() {
 
-    return(
+    return (
         <div>
-            <Navbar/>
-            <LoginForm/>
+            <Navbar />
+            <LoginForm />
         </div>
     );
 }

@@ -1,12 +1,18 @@
+import { useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 import SignupForm from "../components/signupForm/SignupForm";
 
-function SignupPage() {
+const SignupPage = () => {
+    
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const handleSignUp = (a) => {
+        setIsAuthenticated(a);
+    }
 
-    return(
+    return (
         <div>
-            <Navbar/>
-            <SignupForm/>
+            <Navbar isAuthenticated={isAuthenticated}/>
+            <SignupForm onSignUp={handleSignUp}/>
         </div>
     );
 }

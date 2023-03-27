@@ -1,32 +1,37 @@
 .contactus-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 4%;
-  }
-  
-  .contactus-box {
-    flex: 0 0 40%;
-    padding: 10px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 4%;
+  margin-left: 4%;
+}
 
-  .alt-send-button {
-    width: 600px;
-    height: 34px;
-    transition: all .3s ease-in-out;
-  }
+.contactus-box {
+  flex: 0 0 45%;
+  padding: 10px;
 
-  .section-header {
-    text-align: center;
-    margin: 0 auto;
-    padding: 40px 0;
-    font: 300 60px 'Oswald', sans-serif;
-    color: orange;
-    text-transform: uppercase;
-    letter-spacing: 6px;
-  }
+}
+
+.alt-send-button {
+  width: 600px;
+  height: 34px;
+  transition: all .3s ease-in-out;
+  color: white;
+
+}
+
+.section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px 0;
+  font: 300 60px 'Oswald', sans-serif;
+  color: orange;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
 
 .alt-send-button:hover {
   transform: translate3d(0px, -40px, 0px);
+
 }
 
 .send-text {
@@ -34,6 +39,7 @@
   margin-top: 20px;
   font: 700 12px 'Lato', sans-serif;
   letter-spacing: 2px;
+  color: white;
 }
 
 .send-button {
@@ -42,4 +48,5 @@
   width: 600px;
   overflow: hidden;
   transition: all .3s ease-in-out;
+
 }
