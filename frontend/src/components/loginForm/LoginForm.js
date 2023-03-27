@@ -10,10 +10,8 @@ from 'mdb-react-ui-kit';
 import logo from "../../pic/logo.png";
 
 function LoginForm() {
-
     return (
-        
-        <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
+      <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
 
         <div>
           <img style={{height: "100px",marginLeft: 'auto', marginRight: 'auto', marginBottom: '10%'}} src={logo}/>
@@ -29,7 +27,7 @@ function LoginForm() {
         <MDBBtn className="mb-4" style={{backgroundColor: '#F4B183'}}>Sign in</MDBBtn>
   
         <div className="text-center">
-          <p>Not a member? <a href="#!" style={{color: '#F4B183'}}>Register</a></p>
+          <p>Not a member? <a href="/signup" style={{color: '#F4B183'}}>Register</a></p>
           <p>or sign up with:</p>
   
           <div className='d-flex justify-content-between mx-auto' style={{width: '40%'}}>

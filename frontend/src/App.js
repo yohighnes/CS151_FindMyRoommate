@@ -2,16 +2,26 @@ import logo from './logo.svg';
 import './App.css';
 import LoginPage from './pages/LoginPage';
 import LandingPage from './pages/LandingPage';
-import { BrowserRouter as Router, Switch, 
-  Route, Redirect,} from "react-router-dom";
-  
-function App() {
+import { BrowserRouter as Router, Routes, 
+  Route, Navigate} from "react-router-dom";
+import SignupPage from './pages/SignupPage';
+import ContactUsPage from './pages/ContactUsPage';
 
+
+function App() {
+  
 
   return (
-    <div className="App">
-      <LandingPage/>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path='/' Component={LandingPage}/>
+        <Route exact path='/login' Component={LoginPage}/>
+        <Route exact path='/signup' Component={SignupPage}/>
+        <Route exact path='/contactUs' Component={ContactUsPage}/>
+
+      </Routes>
+
+    </Router>
   );
 }
 
