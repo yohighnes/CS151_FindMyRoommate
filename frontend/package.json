@@ -10,6 +10,7 @@
     "bootstrap": "^5.2.3",
     "mdb-react-ui-kit": "^5.1.0",
     "node": "^16.19.1",
+    "npm-watch": "^0.11.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
@@ -22,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch": "npm-watch"
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +46,13 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.2.7"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,jsx"
+    }
   }
 }

@@ -38,18 +38,18 @@ const Navbar = (props)  => {
             <img style={{ height: "50px" }} src={logo} />
           </NavbarBootStrap.Brand>
           <Nav>
-            <Nav.Link className="navLink" href="/" >Home
+            <Nav.Link className="navLink" href="/"><p className="navBtn">Home</p>
             </Nav.Link>
   
-            <Nav.Link className="navLink" href="/about">About
+            <Nav.Link className="navLink" href="/about"><p className="navBtn">About</p>
             </Nav.Link>
   
-            <Nav.Link className="navLink" href="contactUs">Contact Us
+            <Nav.Link className="navLink" href="/contactUs"><p className="navBtn">Contacts Us</p>
             </Nav.Link>
           </Nav>
           <Nav >
-            <Nav.Link className="navLink" href="/signup">Sign Up</Nav.Link>
-            <Nav.Link className="navLink" href="/login">Log In</Nav.Link>
+            <Nav.Link className="navLink" href="/signup"><p className="navBtn">Sign Up</p></Nav.Link>
+            <Nav.Link className="navLink" href="/login"><p className="navBtn">Log In</p></Nav.Link>
           </Nav>
         </Container>
       </NavbarBootStrap>

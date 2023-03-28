@@ -14,13 +14,11 @@ function ContactUsForm() {
 
     const handleName = (e) => {
         e.preventDefault();
-        
         setName(e.target.value);
     }
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        console.log(name);
         setEmail('');
         setName('');
 
