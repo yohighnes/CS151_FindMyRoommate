@@ -9,6 +9,7 @@ import {
 import SignupPage from './pages/SignupPage';
 import ContactUsPage from './pages/ContactUsPage';
 import ProfilePage from './pages/ProfilePage';
+import Chat from './components/chat/Chat';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route exact path='/signup' Component={SignupPage} />
         <Route exact path='/contactUs' Component={ContactUsPage} />
         <Route exact path='/profile' Component={ProfilePage} />
+        {/* <Route exact path='/message' Component={Chat} /> */}
 
       </Routes>
 

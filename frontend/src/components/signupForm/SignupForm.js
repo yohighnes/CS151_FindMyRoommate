@@ -25,6 +25,7 @@ const SignupForm = (props) => {
     setPassword("");
     setSjsuId("");
     setLastname("");
+
     props.onSignUp(true);
 
   }
@@ -58,6 +59,8 @@ const SignupForm = (props) => {
     e.preventDefault()
     setSjsuId(e.target.value);
   }
+
+  // fetch(`${}`)
 
   return (
 

@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
     "mdb-react-ui-kit": "^5.1.0",
+    "net": "^1.0.2",
     "node": "^16.19.1",
     "npm-watch": "^0.11.0",
     "react": "^18.2.0",
@@ -17,6 +18,8 @@
     "react-hook-form": "^7.43.8",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
+    "sockjs-client": "^1.6.1",
+    "stompjs": "^2.3.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
