@@ -5,21 +5,12 @@ const useComponentVisible = (initialIsVisible) => {
     const ref = useRef(null);
 
     const handleClickOutside = (event) => {
-                console.log("outside");
+        console.log("outside");
 
         console.log(ref);
         console.log(ref.current);
         if (ref.current && !ref.current.contains(event.target)) {
             setIsComponentVisible(false);
-        }
-    };
-
-    const handleClickInside = (event) => {
-        console.log("inside");
-        console.log(ref);
-        console.log(ref.current);
-        if (ref.current && ref.current.contains(event.target)) {
-            setIsComponentVisible(true);
         }
     };
 
