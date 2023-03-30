@@ -5,7 +5,7 @@ import Navbar from "../components/navbar/Navbar";
 const ProfilePage = () => {
     return (
         <div>
-            <Navbar />
+            <Navbar isAuthenticated={true} />
             <Profile />
         </div>
 

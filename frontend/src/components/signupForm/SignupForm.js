@@ -7,9 +7,11 @@ import {
 }
   from 'mdb-react-ui-kit';
 import logo from "../../pic/logo.png";
+import { useNavigate } from 'react-router-dom';
 
 
 const SignupForm = (props) => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, setFirstname] = useState("");
@@ -19,14 +21,24 @@ const SignupForm = (props) => {
 
 
   const handleOnClick = () => {
+    registerUser();
     setFirstname("");
     setEmail("");
     setUsername("");
     setPassword("");
     setSjsuId("");
     setLastname("");
+    navigate('/profile');
 
-    props.onSignUp(true);
+  }
+
+  const registerUser = () => {
+    fetch(`http://localhost:8080/register?firstName=${firstname}&lastName=${lastname}&email=${email}&password=${password}&username=${username}`)
+      .then((response) => {
+        if (response.status === 200) {
+          props.onSignUp(true);
+        }
+      })
 
   }
 
@@ -69,12 +81,12 @@ const SignupForm = (props) => {
       <div>
         <img style={{ height: "100px", marginLeft: 'auto', marginRight: 'auto', marginBottom: '10%' }} src={logo} />
       </div>
-      <MDBInput wrapperClass='mb-4' label='First Name' id='firstname' type='text' onChange={handleFirstName} value={firstname}/>
-      <MDBInput wrapperClass='mb-4' label='Last Name' id='lastname' type='text' onChange={handleLastName} value={lastname}/>
-      <MDBInput wrapperClass='mb-4' label='SJSU ID' id='sjsuid' type='text' onChange={handleSjsuId} value={sjsuid}/>
-      <MDBInput wrapperClass='mb-4' label='Username' id='username' type='text' onChange={handleUsername} value={username}/>
-      <MDBInput wrapperClass='mb-4' label='School Email' id='email' type='email' onChange={handleEmail} value={email}/>
-      <MDBInput wrapperClass='mb-4' label='Password' id='password' type='password' onChange={handlePassword} value={password}/>
+      <MDBInput wrapperClass='mb-4' label='First Name' id='firstname' type='text' onChange={handleFirstName} value={firstname} />
+      <MDBInput wrapperClass='mb-4' label='Last Name' id='lastname' type='text' onChange={handleLastName} value={lastname} />
+      <MDBInput wrapperClass='mb-4' label='SJSU ID' id='sjsuid' type='text' onChange={handleSjsuId} value={sjsuid} />
+      <MDBInput wrapperClass='mb-4' label='Username' id='username' type='text' onChange={handleUsername} value={username} />
+      <MDBInput wrapperClass='mb-4' label='School Email' id='email' type='email' onChange={handleEmail} value={email} />
+      <MDBInput wrapperClass='mb-4' label='Password' id='password' type='password' onChange={handlePassword} value={password} />
 
       <MDBBtn className="mb-4" style={{ backgroundColor: 'orange' }} onClick={handleOnClick} type="reset">Sign up</MDBBtn>
 
