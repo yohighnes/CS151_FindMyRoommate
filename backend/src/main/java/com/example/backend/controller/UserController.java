@@ -1,5 +1,6 @@
 package com.example.backend.controller;
 
+import com.example.backend.model.User;
 import com.example.backend.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,10 +19,11 @@ public class UserController {
                                @RequestParam(name="usernamd", defaultValue = "") String username,
                                @RequestParam(name="password", defaultValue = "") String password,
                                @RequestParam(name="email", defaultValue = "") String email) {
-        System.out.println("hi" + firstName);
-        if(userService.registerUser(firstName, lastName, email, password, username) == null) {
+        User user = userService.registerUser(firstName, lastName, email, password, username);
+
+        if(user == null) {
 
         }
-        return "Registered" + firstName;
+        return "Registered";
     }
 }
