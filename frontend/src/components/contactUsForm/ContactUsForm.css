@@ -8,22 +8,20 @@
 .contactus-box {
   flex: 0 0 45%;
   padding: 10px;
-
 }
 
 .alt-send-button {
   width: 600px;
   height: 34px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   color: white;
-
 }
 
 .section-header {
   text-align: center;
   margin: 0 auto;
   padding: 40px 0;
-  font: 300 60px 'Oswald', sans-serif;
+  font: 300 60px "Oswald", sans-serif;
   color: orange;
   text-transform: uppercase;
   letter-spacing: 6px;
@@ -31,22 +29,20 @@
 
 .alt-send-button:hover {
   transform: translate3d(0px, -40px, 0px);
-
 }
 
 .send-text {
   display: block;
   margin-top: 20px;
-  font: 700 12px 'Lato', sans-serif;
+  font: 700 12px "Lato", sans-serif;
   letter-spacing: 2px;
   color: white;
 }
 
-.send-button {
+.sendBtn {
   margin-top: 15px;
   height: 40px;
-  width: 600px;
+  width: 700px;
   overflow: hidden;
-  transition: all .3s ease-in-out;
-
+  transition: all 0.3s ease-in-out;
 }

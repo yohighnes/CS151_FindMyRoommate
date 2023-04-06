@@ -46,8 +46,8 @@ const Profile = () => {
         setShowChat(true);
     }
 
-    if(showChat) {
-        return <Chat username={data.username} receiverName={receiver.username}/>
+    if (showChat) {
+        return <Chat username={data.username} receiverName={receiver.username} />
     }
     return (
         <section style={{ backgroundColor: '#FFF0DD' }}>
@@ -61,7 +61,7 @@ const Profile = () => {
                                         src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
                                         alt="avatar"
                                         className="rounded-circle"
-                                        style={{ width: '150px' }}
+                                        style={{ width: '150px', margin: '0 auto' }}
                                     />
                                 </div>
 
@@ -75,7 +75,7 @@ const Profile = () => {
                             </MDBCardBody>
                         </MDBCard>
 
-            <SocialMedia/>
+                        <SocialMedia />
                     </MDBCol>
                     <MDBCol lg="8">
                         <Info userInfo={data} />

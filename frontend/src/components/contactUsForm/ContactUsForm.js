@@ -35,15 +35,15 @@ function ContactUsForm() {
                 </div>
                 <Form>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Control type="textarea" placeholder="Name" onChange={handleName} value={name}/>
+                        <Form.Control type="textarea" placeholder="Name" onChange={handleName} value={name} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Control type="email" placeholder="Email" onChange={handleEmail} value={email}/>
+                        <Form.Control type="email" placeholder="Email" onChange={handleEmail} value={email} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                         <Form.Control placeholder="Message" as="textarea" rows={5} />
                     </Form.Group>
-                    <button className="btn send-button" id="submit" type="submit" value="SEND" style={{ backgroundColor: 'orange' }} onClick={handleOnSubmit}>
+                    <button className="btn sendBtn" id="submit" type="submit" value="SEND" style={{ backgroundColor: 'orange' }} onClick={handleOnSubmit}>
                         <div className="alt-send-button">
                             <i className="fa fa-paper-plane"></i><span className="send-text">SEND</span>
                         </div>
