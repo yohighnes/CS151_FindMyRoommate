@@ -1,0 +1,34 @@
+package findMyRoomate;
+
+public class UserHabit {
+  private boolean smoke;
+	private boolean drink;
+	private boolean vape;
+	
+	public boolean getSmoke() {
+        return smoke;
+     }
+  
+	public void setSmoke(Boolean smoke) {
+        this.smoke = smoke;
+    }
+	
+	public boolean getDrink() {
+        return drink;
+     }
+  
+	public void setDrink(Boolean drink) {
+        this.drink = drink;
+    }
+	
+	public boolean getVape() {
+        return vape;
+     }
+  
+	public void setVape(Boolean vape) {
+        this.vape = vape;
+    }
+	
+	
+	
+}
