@@ -16,7 +16,7 @@ public class UserService implements IUserService{
         User user = new User();
         user.setEmail(email);
         user.setPassword(password);
-        user.setName(username);
+        user.setUsername(username);
         return user;
     }
 
