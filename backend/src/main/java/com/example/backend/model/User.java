@@ -3,22 +3,46 @@ package com.example.backend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Data
+
 @Entity
-@Table(name="users")
+@Getter
+@Setter
+@Table(name = "users")
 public class User {
 
     @Id
-    @GeneratedValue
-    @Column(name = "userId")
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(name = "username")
-    private String username;
+    @Column(nullable = false)
+    private String name;
 
-    @Column(name = "password")
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false)
     private String password;
 
-    @Column(name = "email")
-    private String email;
+    // getters and setters
 }
+
+
+// @Data
+// @Entity
+// @Table(name="users")
+// public class User {
+
+//     @Id
+//     @GeneratedValue
+//     @Column(name = "userId")
+//     private Integer id;
+
+//     @Column(name = "username")
+//     private String username;
+
+//     @Column(name = "password")
+//     private String password;
+
+//     @Column(name = "email")
+//     private String email;
+// }
