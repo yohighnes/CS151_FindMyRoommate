@@ -40,24 +40,3 @@ public class UserController {
 
 
 
-// @RestController
-// public class UserController {
-
-//     @Autowired
-//     private IUserService userService;
-
-//     @GetMapping("/register")
-//     public String registerUser(@RequestParam(name="firstName", defaultValue = "") String firstName,
-//                                @RequestParam(name="lastName", defaultValue = "") String lastName,
-//                                @RequestParam(name="usernamd", defaultValue = "") String username,
-//                                @RequestParam(name="password", defaultValue = "") String password,
-//                                @RequestParam(name="email", defaultValue = "") String email) {
-//         User user = userService.registerUser(firstName, lastName, email, password, username);
-
-//         if(user == null) {
-//             return "enter data";
-
-//         }
-//         return "Registered";
-//     }
-// }
