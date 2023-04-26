@@ -22,12 +22,11 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    // getters and setters
+    @Column(nullable= false)
+    private String stuId;
 
-    // public void setPassword(String password) {
-    //     BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-    //     this.password = passwordEncoder.encode(password);
-    // }
+    @Column(nullable = false)
+    private String userName;
 }
 
 
