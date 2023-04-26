@@ -22,12 +22,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    // getters and setters
-
-    // public void setPassword(String password) {
-    //     BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-    //     this.password = passwordEncoder.encode(password);
-    // }
 }
 
 
