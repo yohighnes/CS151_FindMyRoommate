@@ -3,7 +3,6 @@ package com.example.backend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @Entity
 @Getter
 @Setter
@@ -23,7 +22,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    // getters and setters
 }
 
 
