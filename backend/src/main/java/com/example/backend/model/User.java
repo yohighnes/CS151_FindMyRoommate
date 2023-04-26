@@ -3,7 +3,6 @@ package com.example.backend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @Entity
 @Getter
 @Setter
@@ -24,6 +23,11 @@ public class User {
     private String password;
 
     // getters and setters
+
+    // public void setPassword(String password) {
+    //     BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    //     this.password = passwordEncoder.encode(password);
+    // }
 }
 
 
