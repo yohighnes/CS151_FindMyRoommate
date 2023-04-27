@@ -23,7 +23,15 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    // getters and setters
+
+    @Column(nullable = false)
+    private String sjsuId;
+
+    @Column(nullable = false)
+    private String username;
+
+   
+
 }
 
 
