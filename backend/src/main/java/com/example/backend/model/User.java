@@ -3,6 +3,7 @@ package com.example.backend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+
 @Entity
 @Getter
 @Setter
@@ -22,6 +23,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+
     @Column(nullable = false)
     private String sjsuId;
 
@@ -29,6 +31,7 @@ public class User {
     private String username;
 
    
+
 }
 
 
