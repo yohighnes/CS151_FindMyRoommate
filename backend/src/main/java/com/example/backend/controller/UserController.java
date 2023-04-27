@@ -92,8 +92,8 @@ public class UserController {
         user.setName(firstName + " " + lastName);
         user.setEmail(email);
         user.setPassword(password);
-        user.setStuId(usernameStuId);
-        user.setUserName(userName);
+        user.setSjsuId(usernameStuId);
+        user.setUsername(userName);
         return userRepository.save(user);
     }
     
@@ -127,24 +127,7 @@ public class UserController {
         }
     }
 
-    // @PostMapping(path = "/login")
-    // public String login(@RequestParam("email") String email, @RequestParam("password") String password) {
-    //     User user = UserService.loginUser(email, password);
-    //     if (user == null) {
-    //         return "Email and/or password are incorrect.";
-    //     } else {
-    //         return "Login successful";
-    //     }
-    // }
     
-
-
-    
-     
-// GetMapping   
-// public string login(){
-//     return"login";
-// }
 
 
 
