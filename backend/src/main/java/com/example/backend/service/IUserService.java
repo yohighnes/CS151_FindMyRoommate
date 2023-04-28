@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.model.User;
+import com.example.backend.model.UserHabit;
 
 
 public interface IUserService {
