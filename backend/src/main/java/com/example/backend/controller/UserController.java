@@ -4,16 +4,18 @@ package com.example.backend.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.example.backend.model.*;
+import com.example.backend.repository.*;
+import com.example.backend.service.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.backend.model.User;
 import com.example.backend.repository.UserRepository;
@@ -23,12 +25,20 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 @RequestMapping(path = "/user")
 public class UserController {
-
+    @Autowired
+    private IUserEducationService userEducationService;
+    @Autowired
+    private IUserHabitService userHabitService;
+    @Autowired
+    private IUserSocialMediaService userSocialMediaService;
+    @Autowired
+    private IUserPreferenceService userPreferenceService;
     @Autowired
     private UserRepository userRepository;
-
+    @Autowired
+    private UserSocialMediaRepository userSocialMediaRepository;
     @PostMapping(path = "/add")
-    public @ResponseBody User addNewUser(@RequestParam String firstName, 
+    public @ResponseBody User addNewUser(@RequestParam String firstName,
                                             @RequestParam String lastName, 
                                             @RequestParam String email, 
                                             @RequestParam String password,
@@ -43,7 +53,30 @@ public class UserController {
         user.setUserName(userName);
         return userRepository.save(user);
     }
-    
+
+    @PostMapping(path = "/addUserProfileInfo")
+    public @ResponseBody String addUserProfileInfo(
+            @RequestParam String userName, @RequestParam boolean smoke, @RequestParam boolean drink, @RequestParam boolean vape,
+            @RequestParam String major, @RequestParam String yearInSchool, @RequestParam Integer graduationYear,
+            @RequestParam String linkedIn, @RequestParam String instagram,
+            @RequestParam String bedTime, @RequestParam String loudness, @RequestParam String cleanliness, @RequestParam String houseHoldSize,
+            @RequestParam String roommateGenderPreference, @RequestParam String monthlyBudget, @RequestParam String locationPreference
+            ) {
+        User user = userRepository.findByUserName(userName);
+
+        UserEducation userEducation = userEducationService.addUserEducation(user, major, yearInSchool, graduationYear);
+        UserHabit userHabit = userHabitService.addUserHabit(user, smoke, drink, vape);
+        UserSocialMedia userSocialMedia = userSocialMediaService.addUserSocialMedia(user, linkedIn, instagram);
+        UserPreference userPreference = userPreferenceService.addUserPreference(user, bedTime, loudness, cleanliness, houseHoldSize, locationPreference, roommateGenderPreference, monthlyBudget);
+
+        user.setUserEducation(userEducation);
+        user.setUserHabit(userHabit);
+        user.setUserSocialMedia(userSocialMedia);
+        user.setUserPreference(userPreference);
+
+        return "Saved";
+
+    }
 
     @GetMapping(path = "/all")
     public @ResponseBody Iterable < User > getAllUsers() {

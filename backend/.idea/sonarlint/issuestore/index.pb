@@ -1,9 +1,23 @@
 
+m
+=src/main/java/com/example/backend/config/WebSocketConfig.java,7/0/70a68ea1a4e68553aaa57946900f99f0ec5d975d
+i
+9src/main/java/com/example/backend/BackendApplication.java,0/3/0330d90159dad911875ef2282bc9c7df48552df2
+p
+@src/main/java/com/example/backend/controller/ChatController.java,6/3/630d19d85a64507edd2f3c3eab048c0b2b8ad4f9
 c
 3src/main/java/com/example/backend/model/Status.java,7/9/7982afa2b4997e17fb0b6412224c576fe777271f
 d
 4src/main/java/com/example/backend/model/Message.java,1/4/14f6d5469b3280047f87f1c66851fa2e6dbc756f
 m
-=src/main/java/com/example/backend/config/WebSocketConfig.java,7/0/70a68ea1a4e68553aaa57946900f99f0ec5d975d
+=src/main/java/com/example/backend/Common/SchoolLevelEnum.java,c/2/c252e5fa6aeea019ff7e3efab45752f30e7bed29
+i
+9src/main/java/com/example/backend/Common/BedTimeEnum.java,a/9/a929ffbb10032df113c7e6f6d4790f12a66f9e6a
+o
+?src/main/java/com/example/backend/Common/HouseHoldSizeEnum.java,6/a/6aedfcf1ae48619b3390e7c7ce47052458a79014
+z
+Jsrc/main/java/com/example/backend/Common/RoommateGenderPreferenceEnum.java,9/1/91ab3b1973321f4fff3acfafb59ab2d391965156
+t
+Dsrc/main/java/com/example/backend/Common/LocationPreferenceEnum.java,9/3/938e0155723a4a7d22cee9dd6692be611c7fe535
 p
-@src/main/java/com/example/backend/controller/ChatController.java,6/3/630d19d85a64507edd2f3c3eab048c0b2b8ad4f9
+@src/main/java/com/example/backend/service/IUserHabitService.java,5/7/57319aacee43d091da454595678e2af65213beba
