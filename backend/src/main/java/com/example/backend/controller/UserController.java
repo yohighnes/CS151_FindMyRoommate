@@ -1,6 +1,11 @@
 package com.example.backend.controller;
 
-// import java.util.Map;
+import com.example.backend.model.User;
+import com.example.backend.repository.UserRepository;
+import com.example.backend.service.IUserService;
+
+import jakarta.servlet.http.HttpSession;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,19 +13,17 @@ import com.example.backend.model.*;
 import com.example.backend.repository.*;
 import com.example.backend.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.backend.model.User;
-import com.example.backend.repository.UserRepository;
-
-import jakarta.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(path = "/user")
@@ -49,8 +52,10 @@ public class UserController {
         user.setName(firstName + " " + lastName);
         user.setEmail(email);
         user.setPassword(password);
+
         user.setStuId(usernameStuId);
         user.setUserName(userName);
+
         return userRepository.save(user);
     }
 
@@ -82,6 +87,7 @@ public class UserController {
     public @ResponseBody Iterable < User > getAllUsers() {
         return userRepository.findAll();
     }
+
     
     @PostMapping(path="/login")
     public ResponseEntity<Map<String, String>> login(@RequestBody Map<String, String> loginData, HttpSession session) {
@@ -107,12 +113,9 @@ public class UserController {
         }
     }
 
-   
-    
 
 
-    
-   
+
 
 
 
