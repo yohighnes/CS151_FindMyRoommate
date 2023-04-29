@@ -23,7 +23,7 @@ public class ContactController {
         String message = request.getParameter("message");
 
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("hoang.khanhnguyen2004@gmail.com") //using a random gmail to test
+        message.setFrom("hoang.khanhnguyen2004@gmail.com") //using a sender gmail to test
         message.setTo("enteryourowngmail.com"); //this is where we suppose to get the gmail
 
 
