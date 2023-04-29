@@ -23,8 +23,8 @@ public class ContactController {
         String message = request.getParameter("message");
 
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("hoang.khanhnguyen2004@gmail.com")
-        message.setTo("uchiha.kamui2004@gmail.com");
+        message.setFrom("hoang.khanhnguyen2004@gmail.com") //using a random gmail to test
+        message.setTo("enteryourowngmail.com"); //this is where we suppose to get the gmail
 
 
         String mailSubject = fullname + "has sent a message";
