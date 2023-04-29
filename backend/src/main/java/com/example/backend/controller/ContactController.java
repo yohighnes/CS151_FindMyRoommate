@@ -2,12 +2,8 @@ package com.example.backend.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ContactController {
@@ -27,8 +23,8 @@ public class ContactController {
         String messageText = request.getParameter("message");
 
         SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setFrom("hoang.khanhnguyen2004@gmail.com");
-        mailMessage.setTo("enteryourowngmail.com");
+        mailMessage.setFrom("hoangnguyenalt@gmail.com");
+        mailMessage.setTo("uchiha.kamui2004@gmail.com");
 
         String mailSubject = fullname + " has sent a message";
         String mailContent = "Sender Name: " + fullname + "\n";
