@@ -1,31 +1,6 @@
 import Roommate from "./Roommate";
 import { useEffect, useState } from "react";
-const users = [
-    {
-        pronouns: 'he/him/his',
-        phone: '(000) 000-0000',
-        name: 'Johnatan Smith',
-        username: 'user',
-        email: 'sba@sjsu.edu.com',
-        pic: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp'
-    },
-    {
-        pronouns: 'he/him/his',
-        phone: '(000) 000-0000',
-        name: 'Johnatan Smith',
-        username: 'user',
-        email: 'sba@sjsu.edu.com',
-        pic: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp'
-    },
-    {
-        pronouns: 'he/him/his',
-        phone: '(000) 000-0000',
-        name: 'Johnatan Smith',
-        username: 'user',
-        email: 'sba@sjsu.edu.com',
-        pic: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp'
-    }
-]
+
 const Roommates = () => {
     const [users, setUsers] = useState([]);
 
@@ -41,8 +16,17 @@ const Roommates = () => {
           }).then(response => {
             return response.json()
           }).then(response => {
-            console.log(response)
-            setUsers(response)
+
+            const condition = (user) => {
+              if(localStorage.getItem("email") !== null) {
+                return user.email !== localStorage.getItem("email");
+              } else {
+                return user.userName !== localStorage.getItem("username");
+              }
+            }
+            const newA = response.filter(user => condition(user));
+            console.log(newA)
+            setUsers(newA)
           });
         };
     

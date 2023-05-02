@@ -41,7 +41,6 @@ const SignupForm = (props) => {
       userName: username
     }
 
-    console.log(jsonData)
     fetch('http://localhost:8080/users/add', { 
       method: 'POST', 
       headers: {
@@ -63,24 +62,6 @@ const SignupForm = (props) => {
       
 
   }
-
-//   const renderMyData = () => {
-//     fetch(`http://localhost:8080/users/user?username=${username}`, { 
-//       method: 'GET', 
-//       headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json'
-//       }
-//     }).then(response => {
-//       console.log(response.json);
-//       console.log(response.status)
-//       if(response.status === 200) {
-//         return response.json();
-//       }
-//     }).then(response => {
-
-//     })       
-// }
 
   const handleFirstName = (e) => {
     e.preventDefault();

@@ -138,19 +138,18 @@ const Profile = (props) => {
                                 <MDBCardBody className="text-center">
                                     <div>
                                         <MDBCardImage
-                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                                            src="https://cdn-icons-png.flaticon.com/512/1160/1160326.png?w=1060&t=st=1683006614~exp=1683007214~hmac=8f61b073c2fce813c06749cbf2a4c01864672a5fdb7d35a0aa4631481e8c19ce"
                                             alt="avatar"
                                             className="rounded-circle"
                                             style={{ width: '150px', margin: '0 auto' }}
                                         />
                                     </div>
     
-                                    <p className="text-muted mb-1">Full Stack Developer</p>
-                                    <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                                    <p className="text-muted mb-1" style={{marginTop: '15px'}}><b>{userData.firstName} {userData.lastName}</b></p>
+                                    <p className="text-muted mb-4">{(userData.userEducation && userData.userEducation.major) ? userData.userEducation.major : "Undeclared"}</p>
                                     <div className="d-flex justify-content-center mb-2">
-                                        <MDBBtn color='warning' style={{ color: 'white', backgroundColor: 'orange' }} onChange={handleIsHidden}>{isHidden ? 'Show' : 'Hide'} Profile</MDBBtn>
-    
-                                        <MDBBtn outline className="ms-1" color='warning' style={{ color: 'orange', backgroundColor: 'white' }} onClick={handleOnMessage}>Message</MDBBtn>
+                                        <MDBBtn outline className="ms-1" color='warning' style={{ color: 'orange', backgroundColor: 'white' }}>Hide Profile</MDBBtn>
+
                                     </div>
                                 </MDBCardBody>
                             </MDBCard>
