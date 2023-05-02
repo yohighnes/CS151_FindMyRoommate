@@ -34,7 +34,7 @@ const Info = (props) => {
                         <MDBCardText>Full Name</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                        <MDBCardText className="text-muted">{props.userInfo.firstName}</MDBCardText>
+                        <MDBCardText className="text-muted">{props.userInfo.firstName} {props.userInfo.lastName}</MDBCardText>
                     </MDBCol>
                 </MDBRow>
                 <hr />
@@ -56,7 +56,7 @@ const Info = (props) => {
                     </MDBCol>
                 </MDBRow>
                 <hr />
-                <MDBRow>
+                {/* <MDBRow>
                     <MDBCol sm="3">
                         <MDBCardText>Pronounce</MDBCardText>
                     </MDBCol>
@@ -85,7 +85,7 @@ const Info = (props) => {
                         }
                     </MDBCol>
                 </MDBRow>
-                <hr />
+                <hr /> */}
                 <MDBRow>
                     <MDBCol sm="3">
                         <MDBCardText>SJSU ID</MDBCardText>

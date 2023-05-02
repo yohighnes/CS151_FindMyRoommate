@@ -9,7 +9,7 @@ const Navbar = (props) => {
     return (
       <NavbarBootStrap bg="white" variant="light" style={{ boxShadow: '0 2px 4px 0 rgba(0,0,0,.2)' }}>
         <Container>
-          <NavbarBootStrap.Brand href="/">
+          <NavbarBootStrap.Brand>
             <img style={{ height: "50px" }} src={logo} />
           </NavbarBootStrap.Brand>
           <Nav>

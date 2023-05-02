@@ -13,9 +13,9 @@ const LivingPreferencesForm = (props) => {
         } else if(loudness === "OCCASIONALLY_SOCIAL") {
             return "2";
         } else if(loudness === "OFTEN_LOUD") {
-            return 3;
+            return "3";
         } else {
-            return 4;;
+            return "4";;
         }
     }
 

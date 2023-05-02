@@ -1,18 +1,49 @@
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn } from 'mdb-react-ui-kit';
 import "./Roommate.css";
 import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router'
 
 const Roommate = (props) => {
     const navigate = useNavigate();
-    let {id} = useParams();
-
-    console.log(id)
 
     const handleViewProfile = () => {
         console.log(props.index);
         navigate(`/users/${props.index}`);
     }
+
+    const convertGenderPreference = (gender) => {
+        if(gender === "FEMALES") {
+            return "Females";
+        } else if(gender === "MALES") {
+            return "Males";
+        } else {
+            return "Mixed";
+        }
+    }
+
+    const convertCleanliness = (cleanliness) => {
+        if(cleanliness === "ALMOST_JUNGLE") {
+            return "Almost Jungle";
+        } else if(cleanliness === "LOTS_OF_STUFF") {
+            return "Lots of stuff";
+        } else if(cleanliness === "MOSTLY_TIDY") {
+            return "Mostly tidy";
+        } else {
+            return "Very clean";
+        }
+    }
+
+    const convertLoudness = (loudness) => {
+        if(loudness === "MOSTLY_QUIET") {
+            return "Mostly quiet";
+        } else if(loudness === "OCCASIONALLY_SOCIAL") {
+            return "Occasionally social";
+        } else if(loudness === "OFTEN_LOUD") {
+            return "Often loud";
+        } else {
+            return "Very party";
+        }
+    }
+
     return (
         <MDBContainer>
             <MDBRow className="justify-content-center">
@@ -35,15 +66,15 @@ const Roommate = (props) => {
                                         style={{ backgroundColor: '#efefef' }}>
                                         <div className="px-3">
                                             <p className="small text-muted mb-1">Loudness</p>
-                                            <p className="mb-0">{props.user.userPreference.loudness}</p>
+                                            <p className="mb-0">{convertLoudness(props.user.userPreference.loudness)}</p>
                                         </div>
                                         <div className="px-3">
                                             <p className="small text-muted mb-1">Cleanliness</p>
-                                            <p className="mb-0">{props.user.userPreference.cleanliness}</p>
+                                            <p className="mb-0">{convertCleanliness(props.user.userPreference.cleanliness)}</p>
                                         </div>
                                         <div className="px-3">
                                             <p className="small text-muted mb-1">Preference</p>
-                                            <p className="mb-0">{props.user.userPreference.roommateGenderPreference}</p>
+                                            <p className="mb-0">{convertGenderPreference(props.user.userPreference.roommateGenderPreference)}</p>
                                         </div>
                                     </div>
                                     <div className="d-flex pt-1">
