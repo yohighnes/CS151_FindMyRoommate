@@ -16,17 +16,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping(path = "/user")
+@CrossOrigin
+@RequestMapping(path = "/users")
 public class UserController {
     @Autowired
     private IUserEducationService userEducationService;
@@ -40,47 +36,106 @@ public class UserController {
     private UserRepository userRepository;
     @Autowired
     private UserSocialMediaRepository userSocialMediaRepository;
+    @Autowired
+    private UserHabitRepository userHabitRepository;
+    @Autowired
+    private UserEducationRepository userEducationRepository;
+    @Autowired
+    private UserPreferenceRepository userPreferenceRepository;
+
     @PostMapping(path = "/add")
-    public @ResponseBody User addNewUser(@RequestParam String firstName,
-                                            @RequestParam String lastName, 
-                                            @RequestParam String email, 
-                                            @RequestParam String password,
-                                            @RequestParam String userName, 
-                                            @RequestParam String usernameStuId ) {
-
-        User user = new User();
-        user.setName(firstName + " " + lastName);
-        user.setEmail(email);
-        user.setPassword(password);
-
-        user.setStuId(usernameStuId);
-        user.setUserName(userName);
-
+    public @ResponseBody User addNewUser(@RequestBody User user) {
         return userRepository.save(user);
     }
 
     @PostMapping(path = "/addUserProfileInfo")
     public @ResponseBody String addUserProfileInfo(
-            @RequestParam String userName, @RequestParam boolean smoke, @RequestParam boolean drink, @RequestParam boolean vape,
-            @RequestParam String major, @RequestParam String yearInSchool, @RequestParam Integer graduationYear,
-            @RequestParam String linkedIn, @RequestParam String instagram,
-            @RequestParam String bedTime, @RequestParam String loudness, @RequestParam String cleanliness, @RequestParam String houseHoldSize,
-            @RequestParam String roommateGenderPreference, @RequestParam String monthlyBudget, @RequestParam String locationPreference
-            ) {
+            @RequestBody Map<String, String> map) {
+
+        String userName = map.get("username");
+        boolean smoke = map.get("smoke").equals("1") ? false : true;
+        boolean drink = map.get("drink").equals("1") ? false : true;
+        boolean vape = map.get("vape").equals("1") ? false : true;
+
+        String major = map.get("major");
+        String yearInSchool = map.get("yearInSchool");
+        Integer graduationYear = Integer.parseInt(map.get("graduationYear"));
+        String linkedIn = map.get("linkedin");
+        String instagram = map.get("instagram");
+        String bedTime = map.get("bedTime");
+        String loudness = map.get("loudness");;
+        String cleanliness = map.get("cleanliness");
+        String houseHoldSize = map.get("householdSize");
+        String roommateGenderPreference = map.get("genderPreference");
+//        String monthlyBudget = map.get("monthlyBudget");
+//        String locationPreference = map.get("linkedin");
+
+        String monthlyBudget = "1000";
+        String locationPreference = "NorthSanJose";
         User user = userRepository.findByUserName(userName);
+        if(user.getUserEducation() == null) {
+            UserEducation userEducation = userEducationService.addUserEducation(user, major, yearInSchool, graduationYear);
+            UserHabit userHabit = userHabitService.addUserHabit(user, smoke, drink, vape);
+            UserSocialMedia userSocialMedia = userSocialMediaService.addUserSocialMedia(user, linkedIn, instagram);
+            UserPreference userPreference = userPreferenceService.addUserPreference(user, bedTime, loudness, cleanliness, houseHoldSize, locationPreference, roommateGenderPreference, monthlyBudget);
 
-        UserEducation userEducation = userEducationService.addUserEducation(user, major, yearInSchool, graduationYear);
-        UserHabit userHabit = userHabitService.addUserHabit(user, smoke, drink, vape);
-        UserSocialMedia userSocialMedia = userSocialMediaService.addUserSocialMedia(user, linkedIn, instagram);
-        UserPreference userPreference = userPreferenceService.addUserPreference(user, bedTime, loudness, cleanliness, houseHoldSize, locationPreference, roommateGenderPreference, monthlyBudget);
+            user.setUserEducation(userEducation);
+            user.setUserHabit(userHabit);
+            user.setUserSocialMedia(userSocialMedia);
+            user.setUserPreference(userPreference);
+            return "Saved";
+        } else {
+            UserEducation userEducation = userEducationRepository.findByUserName(userName);
+            userEducation.setUserName(userName);
+            userEducation.setUser(user);
+            userEducation.setMajor(major);
+            userEducation.setGraduationYear(graduationYear);
+            userEducation.setYearInSchool(userEducationService.convertLevelToEnum(yearInSchool));
 
-        user.setUserEducation(userEducation);
-        user.setUserHabit(userHabit);
-        user.setUserSocialMedia(userSocialMedia);
-        user.setUserPreference(userPreference);
+            UserHabit userHabit = userHabitRepository.findByUserName(userName);
+            userHabit.setUser(user);
+            userHabit.setUserName(userName);
+            userHabit.setDrink(drink);
+            userHabit.setVape(vape);
+            userHabit.setSmoke(smoke);
 
-        return "Saved";
+            UserSocialMedia userSocialMedia = userSocialMediaRepository.findByUserName(userName);
+            userSocialMedia.setUser(user);
+            userSocialMedia.setUserName(userName);
+            userSocialMedia.setInstagram(instagram);
+            userSocialMedia.setLinkedIn(linkedIn);
 
+            UserPreference userPreference = userPreferenceRepository.findByUserName(userName);
+            userPreference.setUser(user);
+            userPreference.setUserName(userName);
+            userPreference.setLocationPreference(userPreferenceService.convertLocationPreference(locationPreference));
+            userPreference.setRoommateGenderPreference(userPreferenceService.convertRoommateGenderPreference(roommateGenderPreference));
+            userPreference.setHouseholdSize(userPreferenceService.convertHouseHoldSize(houseHoldSize));
+            userPreference.setBedTime(userPreferenceService.convertBedTime(bedTime));
+            userPreference.setMonthlyBudget(Integer.parseInt(monthlyBudget));
+            userPreference.setCleanliness(userPreferenceService.convertCleanliness(cleanliness));
+            userPreference.setLoudness(userPreferenceService.convertLoudness(loudness));
+
+            user.setUserHabit(userHabit);
+            user.setUserEducation(userEducation);
+            user.setUserPreference(userPreference);
+            user.setUserSocialMedia(userSocialMedia);
+
+            userRepository.save(user);
+            userEducationRepository.save(userEducation);
+            userPreferenceRepository.save(userPreference);
+            userHabitRepository.save(userHabit);
+            userSocialMediaRepository.save(userSocialMedia);
+            return "Updated";
+        }
+    }
+
+    @GetMapping(path = "/user")
+    public @ResponseBody User getUser(@RequestParam String emailOrUsername) {
+        if(userRepository.findByUserName(emailOrUsername) == null) {
+            return userRepository.findByEmail(emailOrUsername);
+        }
+        return userRepository.findByUserName(emailOrUsername);
     }
 
     @GetMapping(path = "/all")

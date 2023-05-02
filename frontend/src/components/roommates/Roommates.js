@@ -1,4 +1,5 @@
 import Roommate from "./Roommate";
+import { useEffect, useState } from "react";
 const users = [
     {
         pronouns: 'he/him/his',
@@ -26,11 +27,32 @@ const users = [
     }
 ]
 const Roommates = () => {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const path = `http://localhost:8080/users/all`;
+        const fetchData = async () => {
+          await fetch(path, { 
+            method: 'GET', 
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            }
+          }).then(response => {
+            return response.json()
+          }).then(response => {
+            console.log(response)
+            setUsers(response)
+          });
+        };
+    
+        fetchData();
+      },[]);
 
     return (
-        <div className="vh-100" style={{ backgroundColor: '#FFF0DD' }}>
+        <div style={{ backgroundColor: '#FFF0DD' }}>
             {
-                users.map((user, idx) => (<Roommate user={user} key={idx} />))
+                users.map((user, idx) => (<Roommate user={user} key={idx} index={idx}/>))
 
             }
         </div>

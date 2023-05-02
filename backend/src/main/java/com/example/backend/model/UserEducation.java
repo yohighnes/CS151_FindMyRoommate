@@ -1,5 +1,6 @@
 package com.example.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +21,7 @@ public class UserEducation {
     private Enum yearInSchool;
     @Column
     private Integer graduationYear;
+    @JsonIgnore
     @OneToOne(mappedBy="userEducation", cascade= CascadeType.ALL)
     private User user;
 }
