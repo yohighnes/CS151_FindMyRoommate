@@ -1,5 +1,6 @@
 package com.example.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +19,7 @@ public class UserSocialMedia {
     private String linkedIn;
     @Column
     private String instagram;
+    @JsonIgnore
     @OneToOne(mappedBy="userSocialMedia", cascade= CascadeType.ALL)
     private User user;
 }

@@ -40,11 +40,11 @@ public class UserPreferenceService implements IUserPreferenceService {
 
     @Override
     public HouseHoldSizeEnum convertHouseHoldSize(String houseHoldSize) {
-        if(houseHoldSize.equals("One")) {
+        if(houseHoldSize.equals("1")) {
             return HouseHoldSizeEnum.ONE;
-        } else if(houseHoldSize.equals("Two")) {
+        } else if(houseHoldSize.equals("2")) {
             return HouseHoldSizeEnum.TWO;
-        } else if(houseHoldSize.equals("Three")) {
+        } else if(houseHoldSize.equals("3")) {
             return HouseHoldSizeEnum.THREE;
         } else {
             return HouseHoldSizeEnum.FOURPLUS;
@@ -53,11 +53,11 @@ public class UserPreferenceService implements IUserPreferenceService {
 
     @Override
     public BedTimeEnum convertBedTime(String bedTime) {
-        if(bedTime.equals("Nine")) {
+        if(bedTime.equals("1")) {
             return BedTimeEnum.NINE;
-        } else if(bedTime.equals("Ten")) {
+        } else if(bedTime.equals("2")) {
             return BedTimeEnum.TEN;
-        } else if(bedTime.equals("Eleven")) {
+        } else if(bedTime.equals("3")) {
             return BedTimeEnum.ELEVEN;
         } else {
             return BedTimeEnum.TWELVEPLUS;
@@ -66,11 +66,11 @@ public class UserPreferenceService implements IUserPreferenceService {
 
     @Override
     public CleanlinessEnum convertCleanliness(String cleanliness) {
-        if(cleanliness.equals("Almost Jungle")) {
+        if(cleanliness.equals("1")) {
             return CleanlinessEnum.ALMOST_JUNGLE;
-        } else if(cleanliness.equals("Lots of Stuff")) {
+        } else if(cleanliness.equals("2")) {
             return CleanlinessEnum.LOTS_OF_STUFF;
-        } else if(cleanliness.equals("Mostly Tidy")) {
+        } else if(cleanliness.equals("3")) {
             return CleanlinessEnum.MOSTLY_TIDY;
         } else {
             return CleanlinessEnum.VERY_CLEAN;
@@ -79,11 +79,11 @@ public class UserPreferenceService implements IUserPreferenceService {
 
     @Override
     public LoudnessEnum convertLoudness(String loudness) {
-        if(loudness.equals("Mostly Quiet")) {
+        if(loudness.equals("1")) {
             return LoudnessEnum.MOSTLY_QUIET;
-        } else if(loudness.equals("Occasionally Social")) {
+        } else if(loudness.equals("2")) {
             return LoudnessEnum.OCCASIONALLY_SOCIAL;
-        } else if(loudness.equals("Often Loud")) {
+        } else if(loudness.equals("3")) {
             return LoudnessEnum.OFTEN_LOUD;
         } else {
             return LoudnessEnum.VERY_PARTY;

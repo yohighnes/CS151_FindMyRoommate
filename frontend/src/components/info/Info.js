@@ -10,7 +10,6 @@ import useComponentVisible from '../../hooks/useComponentVisible';
 import useFormInput from '../../hooks/useFormInput';
 
 const Info = (props) => {
-
     // visibility props
     const phoneProps = useComponentVisible(false);
     const pronounsProps = useComponentVisible(false);
@@ -35,7 +34,7 @@ const Info = (props) => {
                         <MDBCardText>Full Name</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                        <MDBCardText className="text-muted">Johnatan Smith</MDBCardText>
+                        <MDBCardText className="text-muted">{props.userInfo.firstName}</MDBCardText>
                     </MDBCol>
                 </MDBRow>
                 <hr />
@@ -44,21 +43,30 @@ const Info = (props) => {
                         <MDBCardText>Email</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                        <MDBCardText className="text-muted">example@example.com</MDBCardText>
+                        <MDBCardText className="text-muted">{props.userInfo.email}</MDBCardText>
                     </MDBCol>
                 </MDBRow>
                 <hr />
                 <MDBRow>
                     <MDBCol sm="3">
-                        <MDBCardText>Pronouns</MDBCardText>
+                        <MDBCardText>Username</MDBCardText>
+                    </MDBCol>
+                    <MDBCol sm="9">
+                        <MDBCardText className="text-muted">{props.userInfo.userName}</MDBCardText>
+                    </MDBCol>
+                </MDBRow>
+                <hr />
+                <MDBRow>
+                    <MDBCol sm="3">
+                        <MDBCardText>Pronounce</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9" ref={pronounsProps.ref}>
                         {
-                            pronounsProps.isComponentVisible && <MDBInput label='Pronouns' id='text' type='text' value={pronounsVal.value} onChange={pronounsVal.onChange} />
+                            pronounsProps.isComponentVisible && <MDBInput label='Pronounce' id='text' type='text' value={pronounsVal.value} onChange={pronounsVal.onChange} />
 
                         }
                         {
-                            !pronounsProps.isComponentVisible && <MDBCardText className="text-muted" onClick={handleOnPronounsClick}>{pronounsVal.value}</MDBCardText>
+                            !pronounsProps.isComponentVisible && <MDBCardText onClick={handleOnPronounsClick}>{pronounsVal.value}</MDBCardText>
                         }
                     </MDBCol>
                 </MDBRow>
@@ -73,7 +81,7 @@ const Info = (props) => {
 
                         }
                         {
-                            !phoneProps.isComponentVisible && <MDBCardText className="text-muted" onClick={handleOnPhoneClick}>{phoneVal.value}</MDBCardText>
+                            !phoneProps.isComponentVisible && <MDBCardText onClick={handleOnPhoneClick}>{phoneVal.value}</MDBCardText>
                         }
                     </MDBCol>
                 </MDBRow>

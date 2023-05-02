@@ -22,25 +22,65 @@ const SignupForm = (props) => {
 
   const handleOnClick = () => {
     registerUser();
-    setFirstname("");
-    setEmail("");
-    setUsername("");
-    setPassword("");
-    setSjsuId("");
-    setLastname("");
-    navigate('/profile');
+    // setFirstname("");
+    // setEmail("");
+    // setUsername("");
+    // setPassword("");
+    // setSjsuId("");
+    // setLastname("");
 
   }
 
   const registerUser = () => {
-    fetch(`http://localhost:8080/register?firstName=${firstname}&lastName=${lastname}&email=${email}&password=${password}&username=${username}`)
-      .then((response) => {
-        if (response.status === 200) {
-          props.onSignUp(true);
-        }
-      })
+    const jsonData = {
+      firstName: firstname,
+      lastName: lastname,
+      password: password,
+      email: email,
+      stuId: sjsuid,
+      userName: username
+    }
+
+    console.log(jsonData)
+    fetch('http://localhost:8080/users/add', { 
+      method: 'POST', 
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(jsonData)
+
+    }).then(response => {
+      console.log(response);
+      if(response.status === 200) {
+        
+        props.onSignUp(true);
+        localStorage.setItem("username", username)
+        navigate('/profile', {state: {username: username }});
+      }
+    })
+
+      
 
   }
+
+//   const renderMyData = () => {
+//     fetch(`http://localhost:8080/users/user?username=${username}`, { 
+//       method: 'GET', 
+//       headers: {
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json'
+//       }
+//     }).then(response => {
+//       console.log(response.json);
+//       console.log(response.status)
+//       if(response.status === 200) {
+//         return response.json();
+//       }
+//     }).then(response => {
+
+//     })       
+// }
 
   const handleFirstName = (e) => {
     e.preventDefault();
@@ -72,7 +112,6 @@ const SignupForm = (props) => {
     setSjsuId(e.target.value);
   }
 
-  // fetch(`${}`)
 
   return (
 

@@ -1,6 +1,7 @@
 package com.example.backend.model;
 
 import com.example.backend.Common.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,6 +31,7 @@ public class UserPreference {
     private Integer monthlyBudget;
     @Column
     private LocationPreferenceEnum locationPreference;
+    @JsonIgnore
     @OneToOne(mappedBy="userPreference", cascade= CascadeType.ALL)
     private User user;
 }

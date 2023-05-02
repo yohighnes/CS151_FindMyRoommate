@@ -1,10 +1,10 @@
 import ContactUsForm from "../components/contactUsForm/ContactUsForm";
 import Navbar from "../components/navbar/Navbar";
 
-function ContactUsPage() {
+function ContactUsPage(props) {
     return (
         <div>
-            <Navbar />
+            <Navbar isAuthenticated={localStorage.getItem("username") || localStorage.getItem("email")}/>
             <ContactUsForm />
         </div>
     );
