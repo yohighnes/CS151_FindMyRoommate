@@ -17,16 +17,17 @@ const Roommates = () => {
             return response.json()
           }).then(response => {
 
-            const condition = (user) => {
-              if(localStorage.getItem("email") !== null) {
-                return user.email !== localStorage.getItem("email");
-              } else {
-                return user.userName !== localStorage.getItem("username");
-              }
-            }
-            const newA = response.filter(user => condition(user));
-            console.log(newA)
-            setUsers(newA)
+            // const condition = (user) => {
+            //   if(localStorage.getItem("email") !== null) {
+            //     return user.email !== localStorage.getItem("email");
+            //   } else {
+            //     return user.userName !== localStorage.getItem("username");
+            //   }
+            // }
+            // const newA = response.filter(user => condition(user));
+            // console.log(newA)
+            // setUsers(newA)
+            setUsers(response)
           });
         };
     
