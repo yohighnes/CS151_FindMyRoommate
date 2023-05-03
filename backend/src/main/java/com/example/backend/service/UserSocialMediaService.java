@@ -22,7 +22,7 @@ public class UserSocialMediaService implements IUserSocialMediaService{
         UserSocialMedia userSocialMedia = new UserSocialMedia();
         userSocialMedia.setUserName(user.getUserName());
         userSocialMedia.setUser(user);
-        userSocialMedia.setInstagram(instagram);
+        userSocialMedia.setInstagram(instagram); 
         userSocialMedia.setLinkedIn(linkedIn);
         userSocialMedia.setFacebook(facebook);
         userSocialMedia.setGithub(github);
