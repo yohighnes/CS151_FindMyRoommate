@@ -5,7 +5,7 @@ import com.example.backend.model.User;
 import com.example.backend.model.UserPreference;
 
 public interface IUserPreferenceService {
-    UserPreference addUserPreference(User user, String bedTime, String loudness, String cleanliness, String houseHoldSize, String locationPreference, String roommateGenderPreference, String monthlyBudget);
+    UserPreference addUserPreference(User user, String bedTime, String loudness, String cleanliness, String houseHoldSize, String locationPreference, String roommateGenderPreference, String monthlyBudgetFrom, String monthLyBudgetTo);
     LocationPreferenceEnum convertLocationPreference(String locationPreference);
     RoommateGenderPreferenceEnum convertRoommateGenderPreference(String roommateGenderPreference);
     HouseHoldSizeEnum convertHouseHoldSize(String houseHoldSize);

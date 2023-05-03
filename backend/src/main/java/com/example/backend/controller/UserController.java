@@ -62,22 +62,23 @@ public class UserController {
         Integer graduationYear = Integer.parseInt(map.get("graduationYear"));
         String linkedIn = map.get("linkedin");
         String instagram = map.get("instagram");
+        String facebook = map.get("facebook");
+        String github = map.get("github");
+        String twitter = map.get("twitter");
         String bedTime = map.get("bedTime");
         String loudness = map.get("loudness");;
         String cleanliness = map.get("cleanliness");
         String houseHoldSize = map.get("householdSize");
         String roommateGenderPreference = map.get("genderPreference");
-//        String monthlyBudget = map.get("monthlyBudget");
-//        String locationPreference = map.get("linkedin");
-
-        String monthlyBudget = "1000";
+        String monthlyBudgetFrom = map.get("monthlyBudgetFrom");
+        String monthlyBudgetTo = map.get("monthlyBudgetTo");
         String locationPreference = "NorthSanJose";
         User user = userRepository.findByUserName(userName);
         if(user.getUserEducation() == null) {
             UserEducation userEducation = userEducationService.addUserEducation(user, major, yearInSchool, graduationYear);
             UserHabit userHabit = userHabitService.addUserHabit(user, smoke, drink, vape);
-            UserSocialMedia userSocialMedia = userSocialMediaService.addUserSocialMedia(user, linkedIn, instagram);
-            UserPreference userPreference = userPreferenceService.addUserPreference(user, bedTime, loudness, cleanliness, houseHoldSize, locationPreference, roommateGenderPreference, monthlyBudget);
+            UserSocialMedia userSocialMedia = userSocialMediaService.addUserSocialMedia(user, linkedIn, instagram, facebook, github, twitter);
+            UserPreference userPreference = userPreferenceService.addUserPreference(user, bedTime, loudness, cleanliness, houseHoldSize, locationPreference, roommateGenderPreference, monthlyBudgetFrom, monthlyBudgetTo);
 
             user.setUserEducation(userEducation);
             user.setUserHabit(userHabit);
@@ -104,6 +105,9 @@ public class UserController {
             userSocialMedia.setUserName(userName);
             userSocialMedia.setInstagram(instagram);
             userSocialMedia.setLinkedIn(linkedIn);
+            userSocialMedia.setFacebook(facebook);
+            userSocialMedia.setGithub(github);
+            userSocialMedia.setTwitter(twitter);
 
             UserPreference userPreference = userPreferenceRepository.findByUserName(userName);
             userPreference.setUser(user);
@@ -112,7 +116,8 @@ public class UserController {
             userPreference.setRoommateGenderPreference(userPreferenceService.convertRoommateGenderPreference(roommateGenderPreference));
             userPreference.setHouseholdSize(userPreferenceService.convertHouseHoldSize(houseHoldSize));
             userPreference.setBedTime(userPreferenceService.convertBedTime(bedTime));
-            userPreference.setMonthlyBudget(Integer.parseInt(monthlyBudget));
+            userPreference.setMonthlyBudgetFrom(Integer.parseInt(monthlyBudgetFrom));
+            userPreference.setMonthlyBudgetTo(Integer.parseInt(monthlyBudgetTo));
             userPreference.setCleanliness(userPreferenceService.convertCleanliness(cleanliness));
             userPreference.setLoudness(userPreferenceService.convertLoudness(loudness));
 

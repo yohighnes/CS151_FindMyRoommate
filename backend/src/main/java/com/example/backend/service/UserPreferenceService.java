@@ -91,7 +91,7 @@ public class UserPreferenceService implements IUserPreferenceService {
     }
 
     @Override
-    public UserPreference addUserPreference(User user, String bedTime, String loudness, String cleanliness, String houseHoldSize, String locationPreference, String roommateGenderPreference, String monthlyBudget) {
+    public UserPreference addUserPreference(User user, String bedTime, String loudness, String cleanliness, String houseHoldSize, String locationPreference, String roommateGenderPreference, String monthlyBudgetFrom, String monthlyBudgetTo) {
         UserPreference userPreference = new UserPreference();
         userPreference.setUser(user);
         userPreference.setUserName(user.getUserName());
@@ -100,7 +100,8 @@ public class UserPreferenceService implements IUserPreferenceService {
         userPreference.setLocationPreference(convertLocationPreference(locationPreference));
         userPreference.setRoommateGenderPreference(convertRoommateGenderPreference(roommateGenderPreference));
         userPreference.setHouseholdSize(convertHouseHoldSize(houseHoldSize));
-        userPreference.setMonthlyBudget(Integer.parseInt(monthlyBudget));
+        userPreference.setMonthlyBudgetFrom(Integer.parseInt(monthlyBudgetFrom));
+        userPreference.setMonthlyBudgetTo(Integer.parseInt(monthlyBudgetTo));
         userPreference.setCleanliness(convertCleanliness(cleanliness));
         return userPreferenceRepository.save(userPreference);
     }
