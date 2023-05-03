@@ -5,8 +5,9 @@ import {
     MDBCard,
     MDBCardBody,
     MDBCardImage,
-    MDBBtn
-
+    MDBBtn,
+    MDBCardText,
+    MDBInput
 } from 'mdb-react-ui-kit';
 import { useState, useEffect } from 'react';
 
@@ -17,20 +18,28 @@ import OtherInfo from '../otherInfo/OtherInfo';
 import SocialMedia from '../socialMedia/SocialMedia';
 import Chat from '../chat/Chat';
 import { useLocation } from "react-router-dom";
-
+import useComponentVisible from '../../hooks/useComponentVisible';
+import useFormInput from '../../hooks/useFormInput';
 
 const receiver = {
     username: 'receiverUser'
 }
 
 const Profile = (props) => {
-    const location = useLocation();
-
     const username = localStorage.getItem("username") || localStorage.getItem("email");
     const [isHidden, setIsHidden] = useState(false);
     const [showChat, setShowChat] = useState(false);
     const [userData, setUserData] = useState(null)
     const [updatedData, setUpdatedData] = useState({username: username});
+        
+    const majorProps = useComponentVisible(false);
+        
+    const [majorVal, setMajorVal] = useState("Undeclared");
+    
+    const handleOnMajorClick = () => {
+        majorProps.onChange(!majorProps.isComponentVisible);
+    }
+    
 
       useEffect(() => {
         let path = `http://localhost:8080/users/user?emailOrUsername=${username}`;
@@ -47,18 +56,24 @@ const Profile = (props) => {
           }).then(response => {
             return response.json()
           }).then(response => {
+            setMajorVal(response.userEducation && response.userEducation.major ? response.userEducation.major : "Undeclared");
             setUserData(response);
             setUpdatedData({
                 username: response.userName,
-                smoke: response.userHabit.smoke,
-                drink: response.userHabit.drink,
-                vape: response.userHabit.vape,
-                bedTime: response.userPreference.bedTime,
-                cleanliness: response.userPreference.cleanliness,
-                householdSize: response.userPreference.householdSize,
-                genderPreference: response.userPreference.roommateGenderPreference,
-                linkedin: response.userSocialMedia.linkedIn,
-                instagram: response.userSocialMedia.instagram
+                smoke: response.userHabit && response.userHabit.smoke ? response.userHabit.smoke : "1",
+                drink: response.userHabit && response.userHabit.drink ? response.userHabit.drink : "1",
+                vape: response.userHabit && response.userHabit.vape ? response.userHabit.vape : "1",
+                bedTime: response.userPreference && response.userPreference.bedTime ? response.userPreference.bedTime : "1",
+                cleanliness: response.userPreference && response.userPreference.cleanliness ? response.userPreference.cleanliness : "1",
+                householdSize: response.userPreference && response.userPreference.householdSize ? response.userPreference.householdSize : "1",
+                genderPreference: response.userPreference && response.userPreference.roommateGenderPreference ? response.userPreference.roommateGenderPreference : "Mixed",
+                monthlyBudgetFrom: response.userPreference && response.userPreference.monthlyBudgetFrom ? response.userPreference.monthlyBudgetFrom : "0",
+                monthlyBudgetTo: response.userPreference && response.userPreference.monthlyBudgetTo ? response.userPreference.monthlyBudgetTo : "0",
+                linkedin: response.userSocialMedia && response.userSocialMedia.linkedIn ? response.userSocialMedia.linkedIn : "n/a",
+                instagram: response.userSocialMedia && response.userSocialMedia.instagram ? response.userSocialMedia.instagram : "n/a",
+                facebook: response.userSocialMedia && response.userSocialMedia.facebook ? response.userSocialMedia.facebook : "n/a",
+                github: response.userSocialMedia && response.userSocialMedia.github ? response.userSocialMedia.github : "n/a",
+                twitter: response.userSocialMedia && response.userSocialMedia.twitter ? response.userSocialMedia.twitter : "n/a",
             })
           });
         };
@@ -74,16 +89,21 @@ const Profile = (props) => {
             "smoke": updatedData.smoke ? updatedData.smoke : '1' ,
             "drink": updatedData.drink ? updatedData.drink : '1',
             "vape": updatedData.vape ? updatedData.vape : '1',
-            "major": "Computer Science",
+            "major": majorVal,
             "yearInSchool": "Sophomore",
             "graduationYear": "2025",
             "linkedin": updatedData.linkedin ? updatedData.linkedin : 'n/a',
             "instagram": updatedData.instagram ? updatedData.instagram : 'n/a',
+            "facebook": updatedData.facebook ? updatedData.facebook : 'n/a',
+            "github": updatedData.github ? updatedData.github : 'n/a',
+            "twitter": updatedData.twitter ? updatedData.twitter : 'n/a',
             "bedTime": updatedData.bedTime ? updatedData.bedTime : '1',
             "loudness": updatedData.loudness ? updatedData.loudness : '1',
             "cleanliness": updatedData.cleanliness ? updatedData.cleanliness : '1',
             "householdSize": updatedData.householdSize ? updatedData.householdSize : '1',
-            "genderPreference": updatedData.genderPreference ? updatedData.genderPreference : 'ALLGENDERS'
+            "genderPreference": updatedData.genderPreference ? updatedData.genderPreference : 'ALLGENDERS',
+            "monthlyBudgetFrom": updatedData.monthlyBudgetFrom ? Number(updatedData.monthlyBudgetFrom) : "0",
+            "monthlyBudgetTo": updatedData.monthlyBudgetTo ? Number(updatedData.monthlyBudgetTo) : "0",
         })
 
         fetch('http://localhost:8080/users/addUserProfileInfo', { 
@@ -124,11 +144,16 @@ const Profile = (props) => {
         setShowChat(true);
     }
 
+    const handleMajorChange = (e) => {
+        setMajorVal(e.target.value)
+    }
+
     if (showChat) {
         return <Chat username={userData.username} receiverName={receiver.username} />
     }
 
     if(userData) {
+        
         return (
             <section style={{ backgroundColor: '#FFF0DD' }}>
                 <MDBContainer className="py-5">
@@ -146,7 +171,19 @@ const Profile = (props) => {
                                     </div>
     
                                     <p className="text-muted mb-1" style={{marginTop: '15px'}}><b>{userData.firstName} {userData.lastName}</b></p>
-                                    <p className="text-muted mb-4">{(userData.userEducation && userData.userEducation.major) ? userData.userEducation.major : "Undeclared"}</p>
+                                    <p className="text-muted mb-4" ref={majorProps.ref}>
+                                        
+                                        {/* {(userData.userEducation && userData.userEducation.major) ? userData.userEducation.major : "Undeclared"} */}
+                                        {
+                                            majorProps.isComponentVisible && <MDBInput label='Major' id='text' type='text' value={majorVal} onChange={handleMajorChange} />
+
+                                        }
+                                        {
+                                            !majorProps.isComponentVisible && <MDBCardText onClick={handleOnMajorClick}>{majorVal}</MDBCardText>
+                                        }
+                                        
+                                        </p>
+    
                                     <div className="d-flex justify-content-center mb-2">
                                         <MDBBtn outline className="ms-1" color='warning' style={{ color: 'orange', backgroundColor: 'white' }}>Hide Profile</MDBBtn>
 
