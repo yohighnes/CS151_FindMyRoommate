@@ -40,59 +40,30 @@ const OtherInfo = (props) => {
         setVaping(e.target.value);
     }
 
-    if(props.onOtherInfo) {
-        return (
-            <MDBCard className="mb-4 mb-md-0">
-                <MDBCardBody>
-                    <MDBCardText className="mb-4 box-header">Other Information</MDBCardText>
-                    <MDBCardText className="mb-1 box-label">Smoking</MDBCardText>
-                    <div className="range">
-                        <input type="range" value={smoking} onChange={handleOnSmokingChange}  className="form-range" min="1" max="2" step="1" id="smoking" style={{ color: 'orange' }} />
-                        <div>No <span style={{marginLeft: '20em'}}>Yes</span></div>
-                    </div>
-    
-                    <MDBCardText className="mt-4 mb-1 box-label">Drinking</MDBCardText>
-                    <div className="range">
-                        <input type="range" value={drinking} onChange={handleOnDrinkingChange} className="form-range" min="1" max="2" step="1" id="drinking" style={{ color: 'orange' }} />
-                        <div>No <span style={{marginLeft: '20em'}}>Yes</span></div>
-                    </div>
-    
-                    <MDBCardText className="mt-4 mb-1 box-label">Vaping</MDBCardText>
-                    <div className="range">
-                        <input type="range" value={vaping} onChange={handleOnVapingChange}  className="form-range" min="1" max="2" step="1" id="vaping" style={{ color: 'orange' }} />
-                        <div>No <span style={{marginLeft: '20em'}}>Yes</span></div>
-                    </div>
-                </MDBCardBody>
-            </MDBCard>
-        )
-    } else {
-        return (
-            <MDBCard className="mb-4 mb-md-0">
-                <MDBCardBody>
-                    <MDBCardText className="mb-4 box-header">Other Information</MDBCardText>
-                    <MDBCardText className="mb-1 box-label">Smoking</MDBCardText>
-                    <div className="range">
-                        <input type="range" value={smoking} className="form-range" min="1" max="2" step="1" id="smoking" style={{ color: 'orange' }} />
-                        <div>No <span style={{marginLeft: '20em'}}>Yes</span></div>
-                    </div>
-    
-                    <MDBCardText className="mt-4 mb-1 box-label">Drinking</MDBCardText>
-                    <div className="range">
-                        <input type="range" value={drinking} className="form-range" min="1" max="2" step="1" id="drinking" style={{ color: 'orange' }} />
-                        <div>No <span style={{marginLeft: '20em'}}>Yes</span></div>
-                    </div>
-    
-                    <MDBCardText className="mt-4 mb-1 box-label">Vaping</MDBCardText>
-                    <div className="range">
-                        <input type="range" value={vaping} className="form-range" min="1" max="2" step="1" id="vaping" style={{ color: 'orange' }} />
-                        <div>No <span style={{marginLeft: '20em'}}>Yes</span></div>
-                    </div>
-                </MDBCardBody>
-            </MDBCard>
-        )
-    }
+    return (
+        <MDBCard className="mb-4 mb-md-0">
+            <MDBCardBody>
+                <MDBCardText className="mb-4 box-header">Other Information</MDBCardText>
+                <MDBCardText className="mb-1 box-label">Smoking</MDBCardText>
+                <div className="range">
+                    <input type="range" value={smoking} onChange={handleOnSmokingChange}  className="form-range" min="1" max="2" step="1" id="smoking" style={{ color: 'orange' }} />
+                    <div>No <span style={{marginLeft: '20em'}}>Yes</span></div>
+                </div>
 
+                <MDBCardText className="mt-4 mb-1 box-label">Drinking</MDBCardText>
+                <div className="range">
+                    <input type="range" value={drinking} onChange={handleOnDrinkingChange} className="form-range" min="1" max="2" step="1" id="drinking" style={{ color: 'orange' }} />
+                    <div>No <span style={{marginLeft: '20em'}}>Yes</span></div>
+                </div>
 
+                <MDBCardText className="mt-4 mb-1 box-label">Vaping</MDBCardText>
+                <div className="range">
+                    <input type="range" value={vaping} onChange={handleOnVapingChange}  className="form-range" min="1" max="2" step="1" id="vaping" style={{ color: 'orange' }} />
+                    <div>No <span style={{marginLeft: '20em'}}>Yes</span></div>
+                </div>
+            </MDBCardBody>
+        </MDBCard>
+    )
 
 }
 

@@ -91,7 +91,7 @@ const Info = (props) => {
                         <MDBCardText>SJSU ID</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                        <MDBCardText className="text-muted">{props.userInfo.stuId}</MDBCardText>
+                        <MDBCardText className="text-muted">012345678</MDBCardText>
                     </MDBCol>
                 </MDBRow>
             </MDBCardBody>

@@ -10,8 +10,8 @@ import ContactUsPage from './pages/ContactUsPage';
 import ProfilePage from './pages/ProfilePage';
 import Chat from './components/chat/Chat';
 import RoommatesPage from './pages/RoommatesPage';
+import Roommates from './components/roommates/Roommates';
 import RoommateProfile from './components/roommateProfile/RoommateProfile';
-import AboutPage from './pages/AboutPage';
 
 
 function App() {
@@ -24,7 +24,6 @@ function App() {
         <Route exact path='/login' Component={LoginPage} />
         <Route exact path='/signup' Component={SignupPage} />
         <Route exact path='/contactUs' Component={ContactUsPage} />
-        <Route exact path='/about' Component={AboutPage} />
         <Route exact path='/profile' Component={ProfilePage} />
         {/* <Route exact path='/message' Component={Chat} /> */}
         <Route exact path='/roommates' Component={RoommatesPage} />
