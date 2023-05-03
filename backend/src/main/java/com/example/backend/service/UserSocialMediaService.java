@@ -18,12 +18,15 @@ public class UserSocialMediaService implements IUserSocialMediaService{
     private UserRepository userRepository;
 
     @Override
-    public UserSocialMedia addUserSocialMedia(User user, String linkedIn, String instagram) {
+    public UserSocialMedia addUserSocialMedia(User user, String linkedIn, String instagram, String facebook, String github, String twitter) {
         UserSocialMedia userSocialMedia = new UserSocialMedia();
         userSocialMedia.setUserName(user.getUserName());
         userSocialMedia.setUser(user);
         userSocialMedia.setInstagram(instagram);
         userSocialMedia.setLinkedIn(linkedIn);
+        userSocialMedia.setFacebook(facebook);
+        userSocialMedia.setGithub(github);
+        userSocialMedia.setTwitter(twitter);
         return userSocialMediaRepository.save(userSocialMedia);
     }
 }

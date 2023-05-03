@@ -19,6 +19,12 @@ public class UserSocialMedia {
     private String linkedIn;
     @Column
     private String instagram;
+    @Column
+    private String facebook;
+    @Column
+    private String github;
+    @Column
+    private String twitter;
     @JsonIgnore
     @OneToOne(mappedBy="userSocialMedia", cascade= CascadeType.ALL)
     private User user;

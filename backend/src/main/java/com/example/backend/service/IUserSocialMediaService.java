@@ -4,5 +4,5 @@ import com.example.backend.model.User;
 import com.example.backend.model.UserSocialMedia;
 
 public interface IUserSocialMediaService {
-    UserSocialMedia addUserSocialMedia(User user, String linkedIn, String instagram);
+    UserSocialMedia addUserSocialMedia(User user, String linkedIn, String instagram, String facebook, String github, String twitter);
 }

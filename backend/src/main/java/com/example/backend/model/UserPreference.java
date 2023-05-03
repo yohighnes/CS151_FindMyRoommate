@@ -28,7 +28,9 @@ public class UserPreference {
     @Column
     private RoommateGenderPreferenceEnum roommateGenderPreference;
     @Column
-    private Integer monthlyBudget;
+    private Integer monthlyBudgetFrom;
+    @Column
+    private Integer monthlyBudgetTo;
     @Column
     private LocationPreferenceEnum locationPreference;
     @JsonIgnore
