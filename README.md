@@ -63,6 +63,15 @@ FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a 
 3. Open VSC, cd to the frontend folder and run npm start run. Explore the website :) 
 4. To stop mySQL server, run mysql.server stop
 
+### Snapshots
+<img width="1349" alt="Screen Shot 2023-05-03 at 7 32 18 PM" src="https://user-images.githubusercontent.com/41496282/236098267-2bc57852-f28b-4395-9203-be62c27f59f0.png">
+<img width="1385" alt="Screen Shot 2023-05-03 at 7 32 46 PM" src="https://user-images.githubusercontent.com/41496282/236098440-44424763-040f-4364-bac0-df91dedff5ac.png">
+<img width="1355" alt="Screen Shot 2023-05-03 at 7 33 04 PM" src="https://user-images.githubusercontent.com/41496282/236098493-50f93075-8f63-44ee-88df-762b53124005.png">
+<img width="1380" alt="Screen Shot 2023-05-03 at 7 33 16 PM" src="https://user-images.githubusercontent.com/41496282/236098508-08a72a6f-48b9-4e4e-90ba-77a65b496a2f.png">
+<img width="1363" alt="Screen Shot 2023-05-03 at 7 33 43 PM" src="https://user-images.githubusercontent.com/41496282/236098520-ba8a3f5b-bbb8-4cb1-9051-391950f97298.png">
+<img width="1353" alt="Screen Shot 2023-05-03 at 7 34 00 PM" src="https://user-images.githubusercontent.com/41496282/236098534-2a522e6b-b516-4e37-b293-23a912224789.png">
+
+
 ### References
 
 [1] https://roomiapp.com/
