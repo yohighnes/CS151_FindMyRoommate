@@ -8,6 +8,8 @@ public class UserService implements IUserService{
     @Override
     public User registerUser(String firstName, String lastName, String email, String password, String username) {
         User user = new User();
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
         user.setEmail(email);
         user.setPassword(password);
         user.setUserName(username);
