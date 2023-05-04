@@ -1,4 +1,10 @@
+# CS151-FindMyRoommate
+## Group 7: Yohannes Habtemariam, Hoang Nguyen, Da Thao Trinh
+
+FindMyRoommate is a website designed to help individuals find compatible roommates for shared living situations. The website allows users to create a profile, search for potential roommates based on various criteria such as location, budget, lifestyle preferences, and interests, and communicate with potential matches.
+
 # Table of Contents
+- [Proposal Contributions](#proposal-contributions)
 - [Problem](#problem)
 - [Previous Works](#previous-works)
 - [Intended Usage and Environment](#intended-usage-and-environment)
@@ -10,10 +16,7 @@
 - [Snapshots](#snapshots)
 - [References](#references)
 
-# CS151-FindMyRoommate
-## Group 7: Yohannes Habtemariam, Hoang Nguyen, Da Thao Trinh
 
-FindMyRoommate is a website designed to help individuals find compatible roommates for shared living situations. The website allows users to create a profile, search for potential roommates based on various criteria such as location, budget, lifestyle preferences, and interests, and communicate with potential matches.
 
 ### Proposal Contributions
 
