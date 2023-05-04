@@ -1,3 +1,15 @@
+# Table of Contents
+- [Problem](#problem)
+- [Previous Works](#previous-works)
+- [Intended Usage and Environment](#intended-usage-and-environment)
+- [Diagrams](#diagrams)
+- [Functionality](#functionality)
+- [User Operations](#user-operations)
+- [Solutions](#solutions)
+- [Steps to run the website](#steps-to-run-the-website)
+- [Snapshots](#snapshots)
+- [References](#references)
+
 # CS151-FindMyRoommate
 ## Group 7: Yohannes Habtemariam, Hoang Nguyen, Da Thao Trinh
 
