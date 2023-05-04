@@ -9,7 +9,7 @@ FindMyRoommate is a website designed to help individuals find compatible roommat
 * Hoang worked on:
     * Solutions and Functionality.
     * Code: 
-        * ContactUs (did not finish)
+        * ContactUs
     * Presentation: presentation slides
 * Thao worked on:
     * Proposal: Problem, Previous Works, Intended Usage and Environment, User Operations, References, Steps to run the website and Snapshots.
