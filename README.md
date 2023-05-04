@@ -17,18 +17,18 @@ FindMyRoommate is a website designed to help individuals find compatible roommat
      * Presentation: demo
  
 ##### Yohannes worked on:
-    * setting up github repo.
-    * Code:
-        * setting up mysql database server to interact and store data of backend server
-        * login function (backend)
-        * signup function (backend)
-    * Presentation: presentation slides
+* setting up github repo.
+* Code:
+    * setting up mysql database server to interact and store data of backend server
+    * login function (backend)
+    * signup function (backend)
+* Presentation: presentation slides
 
 ##### Hoang worked on:
-    * Solutions and Functionality.
-    * Code: 
-        * ContactUs
-    * Presentation: presentation slides
+* Solutions and Functionality.
+* Code: 
+    * ContactUs
+* Presentation: presentation slides
 
 
 ### Problem
