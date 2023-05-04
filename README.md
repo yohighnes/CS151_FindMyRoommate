@@ -7,7 +7,15 @@ FindMyRoommate is a website designed to help individuals find compatible roommat
 
 * Yohannes created the repo and wrote a brief summary of what FindMyRoommate is.
 * Hoang worked on Solutions and Functionality.
-* Thao worked on Problem, Previous Works, Intended Usage and Environment, User Operations, and References.
+* Thao worked on:
+    * Proposal: Problem, Previous Works, Intended Usage and Environment, User Operations, and References.
+    * Code: 
+        * Frontend - all.
+        * Backend:
+            * UserHabit, UserPreference, UserEducation, UserSocialMedia related.
+            * Create /addUserProfileInfo and /user endpoints for API call.
+        * Fix bugs and errors.
+    * Presentation: demo
 
 ### Problem
 
@@ -43,6 +51,26 @@ FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a 
 * Survey questions and rating systems will help SJSU students to find a roommate that matches their personality, schedule, and activities.
 * FindMyRoomate will also act similarly to social media. There will be a page for biography where users can introduce themselves to other students.
 * The feedback system is important to us. Users provide feedback on how to improve our website/apps. If users want us to add, remove, or improve a feature, they can send us the feedback form.
+
+### Steps to run the website
+1. Since this website uses mySQL for backend database, we first have to run the mySQL server
+    * follow this guide if you haven’t had mySQL on your laptop https://flaviocopes.com/mysql-how-to-install/
+    * to start mysql server: run mysql.server start
+    * to connect to mysql server: run mysql -u root -p
+    * to create a database name rootdb: run create database rootdb;
+    * to access rootdb database: run use rootdb;
+2. Open your IDE (recommend IntelliJ) and run the backend folder (BackendApplication.java file)
+3. Open VSC, cd to the frontend folder and run npm start run. Explore the website :) 
+4. To stop mySQL server, run mysql.server stop
+
+### Snapshots
+<img width="1349" alt="Screen Shot 2023-05-03 at 7 32 18 PM" src="https://user-images.githubusercontent.com/41496282/236098267-2bc57852-f28b-4395-9203-be62c27f59f0.png">
+<img width="1385" alt="Screen Shot 2023-05-03 at 7 32 46 PM" src="https://user-images.githubusercontent.com/41496282/236098440-44424763-040f-4364-bac0-df91dedff5ac.png">
+<img width="1355" alt="Screen Shot 2023-05-03 at 7 33 04 PM" src="https://user-images.githubusercontent.com/41496282/236098493-50f93075-8f63-44ee-88df-762b53124005.png">
+<img width="1380" alt="Screen Shot 2023-05-03 at 7 33 16 PM" src="https://user-images.githubusercontent.com/41496282/236098508-08a72a6f-48b9-4e4e-90ba-77a65b496a2f.png">
+<img width="1363" alt="Screen Shot 2023-05-03 at 7 33 43 PM" src="https://user-images.githubusercontent.com/41496282/236098520-ba8a3f5b-bbb8-4cb1-9051-391950f97298.png">
+<img width="1353" alt="Screen Shot 2023-05-03 at 7 34 00 PM" src="https://user-images.githubusercontent.com/41496282/236098534-2a522e6b-b516-4e37-b293-23a912224789.png">
+
 
 ### References
 
