@@ -5,7 +5,12 @@ FindMyRoommate is a website designed to help individuals find compatible roommat
 
 ### Proposal Contributions
 
-* Yohannes created the repo and wrote a brief summary of what FindMyRoommate is.
+* Yohannes worked on:
+    * setting up github repo.
+    * Code:
+        * setting up mysql database server to interact and store data of backend server
+        * login function (backend)
+        * signup function (backend)
 * Hoang worked on:
     * Solutions and Functionality.
     * Code: 
@@ -74,6 +79,9 @@ FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a 
 <img width="1380" alt="Screen Shot 2023-05-03 at 7 33 16 PM" src="https://user-images.githubusercontent.com/41496282/236098508-08a72a6f-48b9-4e4e-90ba-77a65b496a2f.png">
 <img width="1363" alt="Screen Shot 2023-05-03 at 7 33 43 PM" src="https://user-images.githubusercontent.com/41496282/236098520-ba8a3f5b-bbb8-4cb1-9051-391950f97298.png">
 <img width="1353" alt="Screen Shot 2023-05-03 at 7 34 00 PM" src="https://user-images.githubusercontent.com/41496282/236098534-2a522e6b-b516-4e37-b293-23a912224789.png">
+<img width="997" alt="Screenshot 2023-04-22 at 6 43 16 PM" src="https://user-images.githubusercontent.com/98793540/236327424-555ce218-0fb5-4a76-b4bc-cde62715f882.png">
+<img width="732" alt="Screenshot 2023-04-26 at 7 24 48 PM" src="https://user-images.githubusercontent.com/98793540/236327579-ad73dc40-b396-4766-8097-b9613764bd2a.png">
+
 
 
 ### References
