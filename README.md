@@ -7,7 +7,15 @@ FindMyRoommate is a website designed to help individuals find compatible roommat
 
 * Yohannes created the repo and wrote a brief summary of what FindMyRoommate is.
 * Hoang worked on Solutions and Functionality.
-* Thao worked on Problem, Previous Works, Intended Usage and Environment, User Operations, and References.
+* Thao worked on:
+    * Proposal: Problem, Previous Works, Intended Usage and Environment, User Operations, and References.
+    * Code: 
+        * Frontend - all.
+        * Backend:
+            * UserHabit, UserPreference, UserEducation, UserSocialMedia related.
+            * Create /addUserProfileInfo and /user endpoints for API call.
+        * Fix bugs and errors.
+    * Presentation: demo
 
 ### Problem
 
@@ -43,6 +51,17 @@ FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a 
 * Survey questions and rating systems will help SJSU students to find a roommate that matches their personality, schedule, and activities.
 * FindMyRoomate will also act similarly to social media. There will be a page for biography where users can introduce themselves to other students.
 * The feedback system is important to us. Users provide feedback on how to improve our website/apps. If users want us to add, remove, or improve a feature, they can send us the feedback form.
+
+### Steps to run the website
+1. Since this website uses mySQL for backend database, we first have to run the mySQL server
+    * follow this guide if you haven’t had mySQL on your laptop https://flaviocopes.com/mysql-how-to-install/
+    * to start mysql server: run mysql.server start
+    * to connect to mysql server: run mysql -u root -p
+    * to create a database name rootdb: run create database rootdb;
+    * to access rootdb database: run use rootdb;
+2. Open your IDE (recommend IntelliJ) and run the backend folder (BackendApplication.java file)
+3. Open VSC, cd to the frontend folder and run npm start run. Explore the website :) 
+4. To stop mySQL server, run mysql.server stop
 
 ### References
 

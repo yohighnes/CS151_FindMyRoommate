@@ -74,7 +74,7 @@ public class UserController {
         String monthlyBudgetTo = map.get("monthlyBudgetTo");
         String locationPreference = "NorthSanJose";
         User user = userRepository.findByUserName(userName);
-        if(user.getUserEducation() == null) {
+        if(user.getUserEducation() == null && user.getUserHabit() == null && user.getUserPreference() == null && user.getUserSocialMedia() == null) {
             UserEducation userEducation = userEducationService.addUserEducation(user, major, yearInSchool, graduationYear);
             UserHabit userHabit = userHabitService.addUserHabit(user, smoke, drink, vape);
             UserSocialMedia userSocialMedia = userSocialMediaService.addUserSocialMedia(user, linkedIn, instagram, facebook, github, twitter);
