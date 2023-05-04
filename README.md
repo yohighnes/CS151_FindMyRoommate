@@ -40,6 +40,23 @@ Nowadays, there are a lot of websites/apps that assist us to look for rooms or r
 
 FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a requirement, only students with active school emails are able to register and public their profiles. The website also provides full access to all students and is free of charge too.
 
+### Diagrams
+| **UML Diagram**| **Description**|
+| :------------- | :------------- |
+| [**Class Diagram**](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/ClassDiagram.png)  | The Class Diagram depicts the blueprint of FindMyRoommate backend system including the relationships and source code dependencies among classes; as well as the blueprint of each object in the system.  |
+| [**State Diagram**](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/StateDiagram.png)  | The State Diagram showed the different states of FindMyRoomate. The first part show how the program run before user service, (start up, shutdown, etc). The second part showed the different states that user will experience when using the web/app (Login, Homepage, User Info, Matching, etc). 
+| [**Use Case Diagram**](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/UseCaseDiagram.png)  | These use cases represent the various actions that both users and administrators can perform on the FindMyRoommate website, from logging in to creating feedback and reports, to viewing their history on the platform. The additional use cases for administrators enable them to manage and monitor user activity on the platform.  |
+| [**Sequence Diagram**](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/SequenceDiagram.png)  | The Sequence Diagram shows the relationship between object and time dimension. In this diagram, we detail how - and in what order -  operations are carried out.  |
+
+
+### Functionality
+* SJSU student ID, Gmail, and reporting system will be the solution in tackling the scam. From our perspective, there will be people who will take care of the report system and manually track down scams and other suspicious activities.
+* Survey questions and rating systems will help SJSU students to find a roommate that matches their personality, schedule, and activities.
+* FindMyRoomate will also act similarly to social media. There will be a page for biography where users can introduce themselves to other students.
+* The feedback system is important to us. Users provide feedback on how to improve our website/apps. If users want us to add, remove, or improve a feature, they can send us the feedback form.
+
+
+
 ### User Operations
 
 * The users are all SJSU students who looking for roommates to share a place with. 
@@ -57,11 +74,7 @@ FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a 
 * A rating system will be used to rate only user experience. There will be no rating system for roommates to avoid negative feedback and targets. These ratings could be a scale from 1 to 10 on the satisfaction of the users.
 * Feedback system: only used to give feedback to the developers on how to improve the website.
 
-### Functionality
-* SJSU student ID, Gmail, and reporting system will be the solution in tackling the scam. From our perspective, there will be people who will take care of the report system and manually track down scams and other suspicious activities.
-* Survey questions and rating systems will help SJSU students to find a roommate that matches their personality, schedule, and activities.
-* FindMyRoomate will also act similarly to social media. There will be a page for biography where users can introduce themselves to other students.
-* The feedback system is important to us. Users provide feedback on how to improve our website/apps. If users want us to add, remove, or improve a feature, they can send us the feedback form.
+
 
 ### Steps to run the website
 1. Since this website uses mySQL for backend database, we first have to run the mySQL server
