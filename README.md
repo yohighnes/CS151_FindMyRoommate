@@ -5,7 +5,7 @@ FindMyRoommate is a website designed to help individuals find compatible roommat
 
 ### Proposal Contributions
 
-* Thao worked on:
+##### Thao worked on:
     * Proposal: Problem, Previous Works, Intended Usage and Environment, User Operations, References, Steps to run the website and Snapshots.
     * Code: 
         * Frontend - all.
@@ -15,7 +15,7 @@ FindMyRoommate is a website designed to help individuals find compatible roommat
         * Fix bugs and errors.
     * Presentation: demo
     
-* Yohannes worked on:
+##### Yohannes worked on:
     * setting up github repo.
     * Code:
         * setting up mysql database server to interact and store data of backend server
@@ -23,7 +23,7 @@ FindMyRoommate is a website designed to help individuals find compatible roommat
         * signup function (backend)
     * Presentation: presentation slides
 
-* Hoang worked on:
+##### Hoang worked on:
     * Solutions and Functionality.
     * Code: 
         * ContactUs
