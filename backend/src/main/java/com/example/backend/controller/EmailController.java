@@ -29,7 +29,7 @@ public class EmailController {
         message.setFrom(email);
         message.setTo(to);
         message.setSubject("You've received a new feedback from " + name);
-        message.setText(name + "'s email is " + email + " and above is the content of the email:\n\n" + text);
+        message.setText(name + "'s email is " + email + " and below is the content of the email:\n" + text);
 
         mailSender.send(message);
 

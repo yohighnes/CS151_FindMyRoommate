@@ -55,11 +55,3 @@ p
 @src/main/java/com/example/backend/repository/UserRepository.java,2/8/289c4e6a7cb0a1c27be04f5997bc21a4cd36770f
 a
 1src/main/java/com/example/backend/model/User.java,4/3/43d7f8894044f00154bbf3ddd966c74a8fcd4179
-p
-@src/main/java/com/example/backend/controller/UserController.java,7/9/79841a7a16c3334d8b0d3efd0d03ca12e9817eda
-i
-9src/main/java/com/example/backend/BackendApplication.java,0/3/0330d90159dad911875ef2282bc9c7df48552df2
-q
-Asrc/main/java/com/example/backend/controller/EmailController.java,c/4/c4e9dbbb92074d7946be8a5fc3511e64cbd7bce1
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
