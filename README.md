@@ -3,19 +3,48 @@
 
 FindMyRoommate is a website designed to help individuals find compatible roommates for shared living situations. The website allows users to create a profile, search for potential roommates based on various criteria such as location, budget, lifestyle preferences, and interests, and communicate with potential matches.
 
+# Table of Contents
+- [Proposal Contributions](#proposal-contributions)
+- [Problem](#problem)
+- [Previous Works](#previous-works)
+- [Intended Usage and Environment](#intended-usage-and-environment)
+- [Diagrams](#diagrams)
+- [Functionality](#functionality)
+- [User Operations](#user-operations)
+- [Solutions](#solutions)
+- [Steps to run the website](#steps-to-run-the-website)
+- [Snapshots](#snapshots)
+- [References](#references)
+
+
+
 ### Proposal Contributions
 
-* Yohannes created the repo and wrote a brief summary of what FindMyRoommate is.
-* Hoang worked on Solutions and Functionality.
-* Thao worked on:
-    * Proposal: Problem, Previous Works, Intended Usage and Environment, User Operations, References, Steps to run the website and Snapshots.
+##### Thao worked on:
+    
+* Proposal: Problem, Previous Works, Intended Usage and Environment, User Operations, References, Steps to run the website and Snapshots.
     * Code: 
         * Frontend - all.
         * Backend:
-            * UserHabit, UserPreference, UserEducation, UserSocialMedia related.
-            * Create /addUserProfileInfo and /user endpoints for API call.
-        * Fix bugs and errors.
-    * Presentation: demo
+             * UserHabit, UserPreference, UserEducation, UserSocialMedia related.
+             * Create /addUserProfileInfo and /user endpoints for API call.
+         * Fix bugs and errors.
+     * Presentation: demo
+ 
+##### Yohannes worked on:
+* setting up github repo.
+* Code:
+    * setting up mysql database server to interact and store data of backend server
+    * login function (backend)
+    * signup function (backend)
+* Presentation: presentation slides
+
+##### Hoang worked on:
+* Solutions and Functionality.
+* Code: 
+    * ContactUs
+* Presentation: presentation slides
+
 
 ### Problem
 
@@ -28,6 +57,23 @@ Nowadays, there are a lot of websites/apps that assist us to look for rooms or r
 ### Intended Usage and Environment
 
 FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a requirement, only students with active school emails are able to register and public their profiles. The website also provides full access to all students and is free of charge too.
+
+### Diagrams
+| **UML Diagram**| **Description**|
+| :------------- | :------------- |
+| [**Class Diagram**](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/ClassDiagram.png)  | The Class Diagram depicts the blueprint of FindMyRoommate backend system including the relationships and source code dependencies among classes; as well as the blueprint of each object in the system.  |
+| [**State Diagram**](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/StateDiagram.png)  | The State Diagram showed the different states of FindMyRoomate. The first part show how the program run before user service, (start up, shutdown, etc). The second part showed the different states that user will experience when using the web/app (Login, Homepage, User Info, Matching, etc). 
+| [**Use Case Diagram**](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/UseCaseDiagram.png)  | These use cases represent the various actions that both users and administrators can perform on the FindMyRoommate website, from logging in to creating feedback and reports, to viewing their history on the platform. The additional use cases for administrators enable them to manage and monitor user activity on the platform.  |
+| [**Sequence Diagram**](https://github.com/yohighnes/CS151_FindMyRoommate/blob/main/diagrams/SequenceDiagram.png)  | The Sequence Diagram shows the relationship between object and time dimension. In this diagram, we detail how - and in what order -  operations are carried out.  |
+
+
+### Functionality
+* SJSU student ID, Gmail, and reporting system will be the solution in tackling the scam. From our perspective, there will be people who will take care of the report system and manually track down scams and other suspicious activities.
+* Survey questions and rating systems will help SJSU students to find a roommate that matches their personality, schedule, and activities.
+* FindMyRoomate will also act similarly to social media. There will be a page for biography where users can introduce themselves to other students.
+* The feedback system is important to us. Users provide feedback on how to improve our website/apps. If users want us to add, remove, or improve a feature, they can send us the feedback form.
+
+
 
 ### User Operations
 
@@ -46,11 +92,7 @@ FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a 
 * A rating system will be used to rate only user experience. There will be no rating system for roommates to avoid negative feedback and targets. These ratings could be a scale from 1 to 10 on the satisfaction of the users.
 * Feedback system: only used to give feedback to the developers on how to improve the website.
 
-### Functionality
-* SJSU student ID, Gmail, and reporting system will be the solution in tackling the scam. From our perspective, there will be people who will take care of the report system and manually track down scams and other suspicious activities.
-* Survey questions and rating systems will help SJSU students to find a roommate that matches their personality, schedule, and activities.
-* FindMyRoomate will also act similarly to social media. There will be a page for biography where users can introduce themselves to other students.
-* The feedback system is important to us. Users provide feedback on how to improve our website/apps. If users want us to add, remove, or improve a feature, they can send us the feedback form.
+
 
 ### Steps to run the website
 1. Since this website uses mySQL for backend database, we first have to run the mySQL server
@@ -70,6 +112,9 @@ FindMyRoommate will be built exclusively for SJSU students to avoid scams. As a 
 <img width="1380" alt="Screen Shot 2023-05-03 at 7 33 16 PM" src="https://user-images.githubusercontent.com/41496282/236098508-08a72a6f-48b9-4e4e-90ba-77a65b496a2f.png">
 <img width="1363" alt="Screen Shot 2023-05-03 at 7 33 43 PM" src="https://user-images.githubusercontent.com/41496282/236098520-ba8a3f5b-bbb8-4cb1-9051-391950f97298.png">
 <img width="1353" alt="Screen Shot 2023-05-03 at 7 34 00 PM" src="https://user-images.githubusercontent.com/41496282/236098534-2a522e6b-b516-4e37-b293-23a912224789.png">
+<img width="997" alt="Screenshot 2023-04-22 at 6 43 16 PM" src="https://user-images.githubusercontent.com/98793540/236327424-555ce218-0fb5-4a76-b4bc-cde62715f882.png">
+<img width="732" alt="Screenshot 2023-04-26 at 7 24 48 PM" src="https://user-images.githubusercontent.com/98793540/236327579-ad73dc40-b396-4766-8097-b9613764bd2a.png">
+
 
 
 ### References
