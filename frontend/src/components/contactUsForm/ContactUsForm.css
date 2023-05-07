@@ -27,9 +27,9 @@
   letter-spacing: 6px;
 }
 
-.alt-send-button:hover {
+/* .alt-send-button:hover {
   transform: translate3d(0px, -40px, 0px);
-}
+} */
 
 .send-text {
   display: block;

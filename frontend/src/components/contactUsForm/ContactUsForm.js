@@ -7,6 +7,7 @@ function ContactUsForm() {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [text, setText] = useState("")
+    const [confirmMessage, setConfirmMessage] = useState(null);
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -21,6 +22,7 @@ function ContactUsForm() {
     };
 
     const handleOnSubmit = (e) => {
+        e.preventDefault();
         const emailInfo = {
             email: email,
             name: name,
@@ -40,6 +42,7 @@ function ContactUsForm() {
                 throw new Error('Failed to send email');
             }
             console.log('Email sent successfully');
+            setConfirmMessage("Thank you for your feedback!");
         })
         .catch(error => {
             console.error(error);
@@ -66,9 +69,18 @@ function ContactUsForm() {
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                         <Form.Control type="textarea" placeholder="Message" onChange={handleMessageChange} value={text} as="textarea" rows={5} />
                     </Form.Group>
+                    {
+                        confirmMessage && <div style={{marginTop: '4%', textAlign: 'center'}}><p>{confirmMessage}</p></div>
+                    }
                     <button className="btn sendBtn" id="submit" type="submit" value="SEND" style={{ backgroundColor: 'orange' }} onClick={handleOnSubmit}>
-                        <div className="alt-send-button">
-                            <i className="fa fa-paper-plane"></i><span className="send-text">SEND</span>
+                        <div className="alt-send-button" style={{marginLeft: "40px"}}>
+                            {
+                                !confirmMessage && <i className="fa fa-paper-plane"></i>
+                            }
+                            
+                            {
+                                confirmMessage && <span>Sent</span>
+                            }
                         </div>
                     </button>
                 </Form>

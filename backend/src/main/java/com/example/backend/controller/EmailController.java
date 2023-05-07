@@ -21,7 +21,7 @@ public class EmailController {
     public @ResponseBody String sendEmail(@RequestBody Map<String, String> emailInfo) {
         String email = emailInfo.get("email");
         String name = emailInfo.get("name");
-        String to = "findmyroommate@gmail.com";
+        String to = "findmyroommate3@gmail.com";
         String text = emailInfo.get("text");
 
         SimpleMailMessage message = new SimpleMailMessage();
