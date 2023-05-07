@@ -6,8 +6,7 @@ import com.example.backend.service.IUserService;
 
 import jakarta.servlet.http.HttpSession;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import com.example.backend.model.*;
 import com.example.backend.repository.*;
@@ -32,6 +31,8 @@ public class UserController {
     private IUserSocialMediaService userSocialMediaService;
     @Autowired
     private IUserPreferenceService userPreferenceService;
+    @Autowired
+    private IUserService userService;
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -112,14 +113,14 @@ public class UserController {
             UserPreference userPreference = userPreferenceRepository.findByUserName(userName);
             userPreference.setUser(user);
             userPreference.setUserName(userName);
-            userPreference.setLocationPreference(userPreferenceService.convertLocationPreference(locationPreference));
-            userPreference.setRoommateGenderPreference(userPreferenceService.convertRoommateGenderPreference(roommateGenderPreference));
-            userPreference.setHouseholdSize(userPreferenceService.convertHouseHoldSize(houseHoldSize));
-            userPreference.setBedTime(userPreferenceService.convertBedTime(bedTime));
+            userPreference.setLocationPreference(userPreferenceService.convertLocationPreferenceToEnum(locationPreference));
+            userPreference.setRoommateGenderPreference(userPreferenceService.convertRoommateGenderPreferenceToEnum(roommateGenderPreference));
+            userPreference.setHouseholdSize(userPreferenceService.convertHouseHoldSizeToEnum(houseHoldSize));
+            userPreference.setBedTime(userPreferenceService.convertBedTimeToEnum(bedTime));
             userPreference.setMonthlyBudgetFrom(Integer.parseInt(monthlyBudgetFrom));
             userPreference.setMonthlyBudgetTo(Integer.parseInt(monthlyBudgetTo));
-            userPreference.setCleanliness(userPreferenceService.convertCleanliness(cleanliness));
-            userPreference.setLoudness(userPreferenceService.convertLoudness(loudness));
+            userPreference.setCleanliness(userPreferenceService.convertCleanlinessToEnum(cleanliness));
+            userPreference.setLoudness(userPreferenceService.convertLoudnessToEnum(loudness));
 
             user.setUserHabit(userHabit);
             user.setUserEducation(userEducation);
@@ -145,9 +146,47 @@ public class UserController {
 
     @GetMapping(path = "/all")
     public @ResponseBody Iterable < User > getAllUsers() {
+
         return userRepository.findAll();
     }
 
+    @GetMapping(path = "/usersWithMatchPercentages")
+    public @ResponseBody List<UserWithPercentage> getAllUsers(@RequestParam String emailOrUsername) {
+        User user;
+        if(userRepository.findByUserName(emailOrUsername) == null) {
+            user = userRepository.findByEmail(emailOrUsername);
+        } else {
+            user = userRepository.findByUserName(emailOrUsername);
+        }
+        String generatedUserStr = userService.generateString(user);
+        String userName = user.getUserName();
+        List<User> roommates = userRepository.findAll()
+                .stream()
+                .filter(userItem -> !userItem.getUserName().equals(userName))
+                .toList();
+
+        Map<User, Double> map = new HashMap<>();
+
+        for (User roommate:
+                roommates) {
+            String generatedRoommateStr = userService.generateString(roommate);
+            map.put(roommate, userService.editDistance(generatedUserStr, generatedRoommateStr));
+        }
+
+        PriorityQueue<User> minQ = new PriorityQueue<>((a,b) -> (int) (map.get(a) - map.get(b)));
+        minQ.addAll(map.keySet());
+
+
+        List<UserWithPercentage> sortedRoommatesWithPercentage = new ArrayList<>();
+        while(!minQ.isEmpty()) {
+            User roommate = minQ.poll();
+            UserWithPercentage userWithPercentage = new UserWithPercentage(roommate.getId(), roommate.getFirstName(), roommate.getLastName(), roommate.getEmail(), roommate.getPassword(), roommate.getUserName(), roommate.getStuId(), roommate.getUserHabit(), roommate.getUserEducation(), roommate.getUserSocialMedia(), roommate.getUserPreference(), (8-map.get(roommate)) * 100 / 8);
+            sortedRoommatesWithPercentage.add(userWithPercentage);
+        }
+
+
+        return sortedRoommatesWithPercentage;
+    }
     
     @PostMapping(path="/login")
     public ResponseEntity<Map<String, String>> login(@RequestBody Map<String, String> loginData, HttpSession session) {

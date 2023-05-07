@@ -6,10 +6,16 @@ import com.example.backend.model.UserPreference;
 
 public interface IUserPreferenceService {
     UserPreference addUserPreference(User user, String bedTime, String loudness, String cleanliness, String houseHoldSize, String locationPreference, String roommateGenderPreference, String monthlyBudgetFrom, String monthLyBudgetTo);
-    LocationPreferenceEnum convertLocationPreference(String locationPreference);
-    RoommateGenderPreferenceEnum convertRoommateGenderPreference(String roommateGenderPreference);
-    HouseHoldSizeEnum convertHouseHoldSize(String houseHoldSize);
-    BedTimeEnum convertBedTime(String bedTime);
-    CleanlinessEnum convertCleanliness(String cleanliness);
-    LoudnessEnum convertLoudness(String loudness);
+    LocationPreferenceEnum convertLocationPreferenceToEnum(String locationPreference);
+    RoommateGenderPreferenceEnum convertRoommateGenderPreferenceToEnum(String roommateGenderPreference);
+    HouseHoldSizeEnum convertHouseHoldSizeToEnum(String houseHoldSize);
+    BedTimeEnum convertBedTimeToEnum(String bedTime);
+    CleanlinessEnum convertCleanlinessToEnum(String cleanliness);
+    LoudnessEnum convertLoudnessToEnum(String loudness);
+    String convertLoudnessToString(LoudnessEnum loudnessEnum);
+    String convertCleanlinessToString(CleanlinessEnum cleanlinessEnum);
+    String convertBedTimeToString(BedTimeEnum bedTimeEnum);
+    String convertHouseHoldSizeToString(HouseHoldSizeEnum houseHoldSizeEnum);
+    String convertRoommateGenderPreferenceToString(RoommateGenderPreferenceEnum roommateGenderPreferenceEnum);
+
 }

@@ -44,7 +44,7 @@ const Navbar = (props) => {
             <Nav.Link className="navLink" href="/about"><p className="navBtn">About</p>
             </Nav.Link>
 
-            <Nav.Link className="navLink" href="/contactUs"><p className="navBtn">Contacts Us</p>
+            <Nav.Link className="navLink" href="/contactUs"><p className="navBtn">Contact Us</p>
             </Nav.Link>
           </Nav>
           <Nav >

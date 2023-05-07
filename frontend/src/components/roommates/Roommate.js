@@ -6,7 +6,6 @@ const Roommate = (props) => {
     const navigate = useNavigate();
 
     const handleViewProfile = () => {
-        console.log(props.index);
         navigate(`/users/${props.index}`);
     }
 
@@ -49,6 +48,8 @@ const Roommate = (props) => {
             <MDBRow className="justify-content-center">
                 <MDBCol md="9" lg="7" xl="7" className="mt-5">
                     <MDBCard style={{ borderRadius: '15px'}}>
+                        <span class="circle">{props.user.percentage} %</span>
+
                         <MDBCardBody className="p-4">
                             <div className="d-flex text-black">
                                 <div className="flex-shrink-0">
@@ -58,6 +59,7 @@ const Roommate = (props) => {
                                         alt='Generic placeholder image'
                                         fluid />
                                 </div>
+
                                 <div className="flex-grow-1 ms-3">
                                     <MDBCardTitle>{props.user.firstName} {props.user.lastName}</MDBCardTitle>
                                     <MDBCardText>{props.user.userEducation.major}</MDBCardText>
