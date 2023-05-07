@@ -20,9 +20,6 @@ import Navbar from '../navbar/Navbar';
 const RoommateProfile = (props) => {
     const { id } = useParams();
     const [userData, setUserData] = useState(null)
-
-
-    console.log(id);
  
     useEffect(() => {
         let path = `http://localhost:8080/users/all`;
@@ -38,7 +35,8 @@ const RoommateProfile = (props) => {
             return response.json()
           }).then(response => {
             console.log(response)
-            setUserData(response[id]);
+            const foundUser = response.filter((e) => e.id === Number(id));
+            setUserData(foundUser[0]);
           });
         };
     

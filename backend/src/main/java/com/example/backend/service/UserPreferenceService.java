@@ -14,7 +14,7 @@ public class UserPreferenceService implements IUserPreferenceService {
     private UserPreferenceRepository userPreferenceRepository;
 
     @Override
-    public LocationPreferenceEnum convertLocationPreference(String locationPreference) {
+    public LocationPreferenceEnum convertLocationPreferenceToEnum(String locationPreference) {
         if(locationPreference.equals("NorthSanJose")) {
             return LocationPreferenceEnum.NORTHSANJOSE;
         } else if(locationPreference.equals("SouthSanJose")) {
@@ -27,7 +27,7 @@ public class UserPreferenceService implements IUserPreferenceService {
     }
 
     @Override
-    public RoommateGenderPreferenceEnum convertRoommateGenderPreference(String roommateGenderPreference) {
+    public RoommateGenderPreferenceEnum convertRoommateGenderPreferenceToEnum(String roommateGenderPreference) {
         if(roommateGenderPreference.equals("Males")) {
             return RoommateGenderPreferenceEnum.MALES;
         } else if(roommateGenderPreference.equals("Females")) {
@@ -39,7 +39,7 @@ public class UserPreferenceService implements IUserPreferenceService {
 
 
     @Override
-    public HouseHoldSizeEnum convertHouseHoldSize(String houseHoldSize) {
+    public HouseHoldSizeEnum convertHouseHoldSizeToEnum(String houseHoldSize) {
         if(houseHoldSize.equals("1")) {
             return HouseHoldSizeEnum.ONE;
         } else if(houseHoldSize.equals("2")) {
@@ -52,7 +52,7 @@ public class UserPreferenceService implements IUserPreferenceService {
     }
 
     @Override
-    public BedTimeEnum convertBedTime(String bedTime) {
+    public BedTimeEnum convertBedTimeToEnum(String bedTime) {
         if(bedTime.equals("1")) {
             return BedTimeEnum.NINE;
         } else if(bedTime.equals("2")) {
@@ -65,7 +65,7 @@ public class UserPreferenceService implements IUserPreferenceService {
     }
 
     @Override
-    public CleanlinessEnum convertCleanliness(String cleanliness) {
+    public CleanlinessEnum convertCleanlinessToEnum(String cleanliness) {
         if(cleanliness.equals("1")) {
             return CleanlinessEnum.ALMOST_JUNGLE;
         } else if(cleanliness.equals("2")) {
@@ -78,7 +78,7 @@ public class UserPreferenceService implements IUserPreferenceService {
     }
 
     @Override
-    public LoudnessEnum convertLoudness(String loudness) {
+    public LoudnessEnum convertLoudnessToEnum(String loudness) {
         if(loudness.equals("1")) {
             return LoudnessEnum.MOSTLY_QUIET;
         } else if(loudness.equals("2")) {
@@ -91,18 +91,81 @@ public class UserPreferenceService implements IUserPreferenceService {
     }
 
     @Override
+    public String convertLoudnessToString(LoudnessEnum loudnessEnum) {
+        if(loudnessEnum.toString().equals("MOSTLY_QUIET")) {
+            return "1";
+        } else if(loudnessEnum.toString().equals("OCCASIONALLY_SOCIAL")) {
+            return "2";
+        } else if(loudnessEnum.toString().equals("OFTEN_LOUD")) {
+            return "3";
+        } else {
+            return "4";
+        }
+    }
+
+    @Override
+    public String convertCleanlinessToString(CleanlinessEnum cleanlinessEnum) {
+        if(cleanlinessEnum.toString().equals("ALMOST_JUNGLE")) {
+            return "1";
+        } else if(cleanlinessEnum.toString().equals("LOTS_OF_STUFF")) {
+            return "2";
+        } else if(cleanlinessEnum.toString().equals("MOSTLY_TIDY")) {
+            return "3";
+        } else {
+            return "4";
+        }
+    }
+
+    @Override
+    public String convertBedTimeToString(BedTimeEnum bedTimeEnum) {
+        if(bedTimeEnum.toString().equals("NINE")) {
+            return "1";
+        } else if(bedTimeEnum.toString().equals("TEN")) {
+            return "2";
+        } else if(bedTimeEnum.toString().equals("ELEVEN")) {
+            return "3";
+        } else {
+            return "4";
+        }
+    }
+
+    @Override
+    public String convertHouseHoldSizeToString(HouseHoldSizeEnum houseHoldSizeEnum) {
+        if(houseHoldSizeEnum.toString().equals("ONE")) {
+            return "1";
+        } else if(houseHoldSizeEnum.toString().equals("TWO")) {
+            return "2";
+        } else if(houseHoldSizeEnum.toString().equals("THREE")) {
+            return "3";
+        } else {
+            return "4";
+        }
+    }
+
+    @Override
+    public String convertRoommateGenderPreferenceToString(RoommateGenderPreferenceEnum roommateGenderPreferenceEnum) {
+        if(roommateGenderPreferenceEnum.toString().equals("MALES")) {
+            return "1";
+        } else if(roommateGenderPreferenceEnum.toString().equals("FEMALES")) {
+            return "2";
+        } else {
+            return "3";
+        }
+    }
+
+    @Override
     public UserPreference addUserPreference(User user, String bedTime, String loudness, String cleanliness, String houseHoldSize, String locationPreference, String roommateGenderPreference, String monthlyBudgetFrom, String monthlyBudgetTo) {
         UserPreference userPreference = new UserPreference();
         userPreference.setUser(user);
         userPreference.setUserName(user.getUserName());
-        userPreference.setBedTime(convertBedTime(bedTime));
-        userPreference.setLoudness(convertLoudness(loudness));
-        userPreference.setLocationPreference(convertLocationPreference(locationPreference));
-        userPreference.setRoommateGenderPreference(convertRoommateGenderPreference(roommateGenderPreference));
-        userPreference.setHouseholdSize(convertHouseHoldSize(houseHoldSize));
+        userPreference.setBedTime(convertBedTimeToEnum(bedTime));
+        userPreference.setLoudness(convertLoudnessToEnum(loudness));
+        userPreference.setLocationPreference(convertLocationPreferenceToEnum(locationPreference));
+        userPreference.setRoommateGenderPreference(convertRoommateGenderPreferenceToEnum(roommateGenderPreference));
+        userPreference.setHouseholdSize(convertHouseHoldSizeToEnum(houseHoldSize));
         userPreference.setMonthlyBudgetFrom(Integer.parseInt(monthlyBudgetFrom));
         userPreference.setMonthlyBudgetTo(Integer.parseInt(monthlyBudgetTo));
-        userPreference.setCleanliness(convertCleanliness(cleanliness));
+        userPreference.setCleanliness(convertCleanlinessToEnum(cleanliness));
         return userPreferenceRepository.save(userPreference);
     }
 
